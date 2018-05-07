@@ -12,6 +12,14 @@
 		5A553A17208E3BA100820737 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A553A15208E3BA100820737 /* PostCell.swift */; };
 		5A553A18208E3BA100820737 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A553A16208E3BA100820737 /* PostCell.xib */; };
 		5A553A1A208F256E00820737 /* PostImageView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A553A19208F256E00820737 /* PostImageView1.xib */; };
+		5A7BDF5B209DA65B008CAA3F /* MotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF5A209DA65A008CAA3F /* MotionViewController.swift */; };
+		5A7BDF5D209DA862008CAA3F /* MotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF5C209DA862008CAA3F /* MotionCell.swift */; };
+		5A7BDF60209DAF82008CAA3F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF5F209DAF82008CAA3F /* Constants.swift */; };
+		5A7BDF62209DB87E008CAA3F /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF61209DB87E008CAA3F /* PlaceViewController.swift */; };
+		5A7BDF64209DBCAB008CAA3F /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF63209DBCAB008CAA3F /* CustomNavigationController.swift */; };
+		5A7BDF67209DBE64008CAA3F /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF66209DBE64008CAA3F /* UIColor+Ex.swift */; };
+		5A7BDF69209DC345008CAA3F /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF68209DC345008CAA3F /* PhotoViewController.swift */; };
+		5A7BDF6B209F1297008CAA3F /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF6A209F1297008CAA3F /* PhotoCell.swift */; };
 		5AA34F222086EF7B00E50B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F212086EF7B00E50B2B /* AppDelegate.swift */; };
 		5AA34F242086EF7B00E50B2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F232086EF7B00E50B2B /* ViewController.swift */; };
 		5AA34F272086EF7B00E50B2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA34F252086EF7B00E50B2B /* Main.storyboard */; };
@@ -19,6 +27,7 @@
 		5AA34F2C2086EF7B00E50B2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA34F2A2086EF7B00E50B2B /* LaunchScreen.storyboard */; };
 		5AA34F372086EF7B00E50B2B /* JournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F362086EF7B00E50B2B /* JournalTests.swift */; };
 		5AA34F422086EF7B00E50B2B /* JournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F412086EF7B00E50B2B /* JournalUITests.swift */; };
+		5AB64F3A209778FE00ACD157 /* AddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB64F39209778FE00ACD157 /* AddingViewController.swift */; };
 		5AFCA7F3208F7469005D3C39 /* PostImageView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AFCA7F2208F7469005D3C39 /* PostImageView2.xib */; };
 		5AFCA7F5208F76BA005D3C39 /* PostImageView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA7F4208F76BA005D3C39 /* PostImageView1.swift */; };
 		5AFCA7F7208F77F3005D3C39 /* PostImageView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA7F6208F77F3005D3C39 /* PostImageView2.swift */; };
@@ -58,6 +67,14 @@
 		5A553A15208E3BA100820737 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		5A553A16208E3BA100820737 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		5A553A19208F256E00820737 /* PostImageView1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostImageView1.xib; sourceTree = "<group>"; };
+		5A7BDF5A209DA65A008CAA3F /* MotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionViewController.swift; sourceTree = "<group>"; };
+		5A7BDF5C209DA862008CAA3F /* MotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionCell.swift; sourceTree = "<group>"; };
+		5A7BDF5F209DAF82008CAA3F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5A7BDF61209DB87E008CAA3F /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
+		5A7BDF63209DBCAB008CAA3F /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		5A7BDF66209DBE64008CAA3F /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
+		5A7BDF68209DC345008CAA3F /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		5A7BDF6A209F1297008CAA3F /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		5AA34F1E2086EF7A00E50B2B /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA34F212086EF7B00E50B2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AA34F232086EF7B00E50B2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +88,7 @@
 		5AA34F3D2086EF7B00E50B2B /* JournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA34F412086EF7B00E50B2B /* JournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalUITests.swift; sourceTree = "<group>"; };
 		5AA34F432086EF7B00E50B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AB64F39209778FE00ACD157 /* AddingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingViewController.swift; sourceTree = "<group>"; };
 		5AFCA7F2208F7469005D3C39 /* PostImageView2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostImageView2.xib; sourceTree = "<group>"; };
 		5AFCA7F4208F76BA005D3C39 /* PostImageView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView1.swift; sourceTree = "<group>"; };
 		5AFCA7F6208F77F3005D3C39 /* PostImageView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView2.swift; sourceTree = "<group>"; };
@@ -161,6 +179,34 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5A7BDF59209DA61E008CAA3F /* Attach */ = {
+			isa = PBXGroup;
+			children = (
+				5A7BDF5A209DA65A008CAA3F /* MotionViewController.swift */,
+				5A7BDF5C209DA862008CAA3F /* MotionCell.swift */,
+				5A7BDF61209DB87E008CAA3F /* PlaceViewController.swift */,
+				5A7BDF68209DC345008CAA3F /* PhotoViewController.swift */,
+				5A7BDF6A209F1297008CAA3F /* PhotoCell.swift */,
+			);
+			path = Attach;
+			sourceTree = "<group>";
+		};
+		5A7BDF5E209DAF74008CAA3F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5A7BDF5F209DAF82008CAA3F /* Constants.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		5A7BDF65209DBE4A008CAA3F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A7BDF66209DBE64008CAA3F /* UIColor+Ex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5AA34F152086EF7A00E50B2B = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +232,8 @@
 		5AA34F202086EF7B00E50B2B /* Journal */ = {
 			isa = PBXGroup;
 			children = (
+				5A7BDF65209DBE4A008CAA3F /* Extensions */,
+				5A7BDF5E209DAF74008CAA3F /* Utils */,
 				5AFCA80320907B36005D3C39 /* Manager */,
 				5A553A0E208DCC1700820737 /* Modules */,
 				5AA34F212086EF7B00E50B2B /* AppDelegate.swift */,
@@ -196,6 +244,7 @@
 				5AA34F2D2086EF7B00E50B2B /* Info.plist */,
 				5AFCA7FC20906AA6005D3C39 /* CustomTabController.swift */,
 				5AFCA7FE20907270005D3C39 /* CustomTabBar.swift */,
+				5A7BDF63209DBCAB008CAA3F /* CustomNavigationController.swift */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -221,7 +270,9 @@
 		5AFCA80020907AC2005D3C39 /* NewPost */ = {
 			isa = PBXGroup;
 			children = (
+				5A7BDF59209DA61E008CAA3F /* Attach */,
 				5AFCA80120907AE1005D3C39 /* NewPostViewController.swift */,
+				5AB64F39209778FE00ACD157 /* AddingViewController.swift */,
 			);
 			path = NewPost;
 			sourceTree = "<group>";
@@ -523,11 +574,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Journal/Pods-Journal-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BSGridCollectionViewLayout/BSGridCollectionViewLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/BSImagePicker/BSImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/UIImageViewModeScaleAspect/UIImageViewModeScaleAspect.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSGridCollectionViewLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIImageViewModeScaleAspect.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -542,16 +599,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AA34F242086EF7B00E50B2B /* ViewController.swift in Sources */,
+				5A7BDF5D209DA862008CAA3F /* MotionCell.swift in Sources */,
 				5AFCA7FB209062FC005D3C39 /* PostImageView3.swift in Sources */,
 				5AFCA7FD20906AA6005D3C39 /* CustomTabController.swift in Sources */,
+				5A7BDF5B209DA65B008CAA3F /* MotionViewController.swift in Sources */,
+				5A7BDF60209DAF82008CAA3F /* Constants.swift in Sources */,
 				5AFCA80520907B49005D3C39 /* StoryboardManager.swift in Sources */,
 				5AFCA7F5208F76BA005D3C39 /* PostImageView1.swift in Sources */,
+				5A7BDF62209DB87E008CAA3F /* PlaceViewController.swift in Sources */,
+				5A7BDF67209DBE64008CAA3F /* UIColor+Ex.swift in Sources */,
 				5AFCA7FF20907270005D3C39 /* CustomTabBar.swift in Sources */,
 				5AA34F222086EF7B00E50B2B /* AppDelegate.swift in Sources */,
 				5AFCA7F7208F77F3005D3C39 /* PostImageView2.swift in Sources */,
 				5A553A13208DCC8000820737 /* TimelineViewController.swift in Sources */,
 				5A553A17208E3BA100820737 /* PostCell.swift in Sources */,
 				5AFCA80220907AE1005D3C39 /* NewPostViewController.swift in Sources */,
+				5A7BDF6B209F1297008CAA3F /* PhotoCell.swift in Sources */,
+				5A7BDF64209DBCAB008CAA3F /* CustomNavigationController.swift in Sources */,
+				5A7BDF69209DC345008CAA3F /* PhotoViewController.swift in Sources */,
+				5AB64F3A209778FE00ACD157 /* AddingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,12 +9,23 @@
 import UIKit
 
 class StoryboardManager {
-    static var shared = StoryboardManager()
     
    class Main {
         static let storyboardName = "Main"
         static func getNewPostVC() -> UINavigationController {
             return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: "NewPostNavigationVC")) as! UINavigationController
+        }
+    
+        static func getAddingVC() -> UIViewController {
+            return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: String(describing: AddingViewController.self))) as! ViewController
+        }
+    
+        static func getMotionVC() -> UINavigationController {
+            return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: "MotionNavigationVC")) as! UINavigationController
+        }
+    
+        static func getPlaceVC() -> UINavigationController {
+            return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: "PlaceNavigationVC")) as! UINavigationController
         }
     }
 }
