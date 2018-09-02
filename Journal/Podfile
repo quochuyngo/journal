@@ -8,6 +8,7 @@ target 'Journal' do
   # Pods for Journal
   pod 'SnapKit', '~> 4.0.0'
   pod 'BSImagePicker', '~> 2.4'
+  pod 'IQKeyboardManagerSwift'
   target 'JournalTests' do
     inherit! :search_paths
     # Pods for testing

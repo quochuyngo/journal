@@ -13,15 +13,15 @@ class StoryboardManager {
    class Main {
         static let storyboardName = "Main"
         static func getNewPostVC() -> UINavigationController {
-            return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: "NewPostNavigationVC")) as! UINavigationController
+            return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: "NewJournalNavigationVC")) as! UINavigationController
         }
     
-        static func getAddingVC() -> UIViewController {
-            return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: String(describing: AddingViewController.self))) as! ViewController
+        static func getAddingItemVC() -> UIViewController {
+            return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: String(describing: AddingItemViewController.self)))
         }
     
         static func getMotionVC() -> UINavigationController {
-            return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: "MotionNavigationVC")) as! UINavigationController
+            return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: "EmotionNavigationVC")) as! UINavigationController
         }
     
         static func getPlaceVC() -> UINavigationController {

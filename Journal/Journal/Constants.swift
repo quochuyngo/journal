@@ -10,4 +10,4 @@ import UIKit
 
 let heightScreen = UIScreen.main.bounds.height
 let widthScreen = UIScreen.main.bounds.width
-let ratio = 1
+let ratio = widthScreen/375

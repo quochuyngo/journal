@@ -11,9 +11,13 @@ import UIKit
 class TimelineViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var journalList = [Journal]()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        if let customTabBar = tabBarController?.tabBar as? CustomTabBar {
+            customTabBar.customDelegate = self
+        }
     }
     
     func setupTableView() {
@@ -22,7 +26,7 @@ class TimelineViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.contentInset = UIEdgeInsetsMake(5, 0, 5, 0)
-        tableView.register(UINib(nibName: String(describing: PostCell.self), bundle: nil), forCellReuseIdentifier: String(describing: PostCell.self))
+        tableView.register(UINib(nibName: String(describing: JournalCell.self), bundle: nil), forCellReuseIdentifier: String(describing: JournalCell.self))
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,12 +42,12 @@ extension TimelineViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return journalList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PostCell.self)) as! PostCell
-        cell.data = indexPath.row
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: JournalCell.self)) as! JournalCell
+        cell.data = journalList[indexPath.row]
         return cell
     }
     
@@ -51,4 +55,20 @@ extension TimelineViewController: UITableViewDelegate, UITableViewDataSource {
 //        return 360
 //    }
     
+}
+extension TimelineViewController: CustomBarDelegate {
+    func tabBar(_ tabBar: UITabBar, didTapCenterButton: UIButton) {
+        let nav = StoryboardManager.Main.getNewPostVC()
+        if let vc = nav.viewControllers.first as? NewJournalViewController {
+            vc.delegate = self
+        }
+        present(nav, animated: true, completion: nil)
+    }
+}
+
+extension TimelineViewController: NewJournalViewControllerDelegate {
+    func didAdd(_ journal: Journal) {
+        journalList.append(journal)
+        tableView.reloadData()
+    }
 }
