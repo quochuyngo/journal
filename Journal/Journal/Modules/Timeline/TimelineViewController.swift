@@ -8,6 +8,9 @@
 
 import UIKit
 import GooglePlaces
+import RealmSwift
+
+let realm = try! Realm()
 
 class TimelineViewController: UIViewController {
 
@@ -18,6 +21,7 @@ class TimelineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.requestWhenInUseAuthorization()
+        journalList = getListJournal()
         setupTableView()
         if let customTabBar = tabBarController?.tabBar as? CustomTabBar {
             customTabBar.customDelegate = self
@@ -33,11 +37,10 @@ class TimelineViewController: UIViewController {
         tableView.register(UINib(nibName: String(describing: JournalCell.self), bundle: nil), forCellReuseIdentifier: String(describing: JournalCell.self))
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func getListJournal() -> [Journal]{
+        let journalList = realm.objects(Journal.self)
+        return Array(journalList).reversed()
     }
-
 }
 
 extension TimelineViewController: UITableViewDelegate, UITableViewDataSource {
@@ -74,5 +77,8 @@ extension TimelineViewController: NewJournalViewControllerDelegate {
     func didAdd(_ journal: Journal) {
         journalList.append(journal)
         tableView.reloadData()
+        try! realm.write {
+            realm.add(journal)
+        }
     }
 }

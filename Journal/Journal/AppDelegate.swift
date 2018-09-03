@@ -9,8 +9,8 @@
 import UIKit
 import IQKeyboardManagerSwift
 import GooglePlaces
- 
-let goooglePlacesKey = "AIzaSyCVO_g1cq7_vniAYiz4aiASFb9os_DMwGI"
+
+ let goooglePlacesKey = "AIzaSyCVO_g1cq7_vniAYiz4aiASFb9os_DMwGI"
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

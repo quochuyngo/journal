@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37E03B7EC470D8908A8AFA6A /* Pods_JournalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B3C3A4032C601D60C90B86 /* Pods_JournalTests.framework */; };
+		5A06EEB1213D8EB00098BD07 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A06EEB0213D8EB00098BD07 /* FileManager.swift */; };
 		5A553A13208DCC8000820737 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A553A12208DCC8000820737 /* TimelineViewController.swift */; };
 		5A553A17208E3BA100820737 /* JournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A553A15208E3BA100820737 /* JournalCell.swift */; };
 		5A553A18208E3BA100820737 /* JournalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A553A16208E3BA100820737 /* JournalCell.xib */; };
@@ -70,6 +71,7 @@
 		4EAFE3B691C09DDA9D7D4B05 /* Pods-JournalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JournalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JournalTests/Pods-JournalTests.release.xcconfig"; sourceTree = "<group>"; };
 		4FE54A0E2BA0656B030871CB /* Pods_JournalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JournalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50EC0F234506174A6760B6AE /* Pods-JournalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JournalTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JournalTests/Pods-JournalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5A06EEB0213D8EB00098BD07 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		5A553A12208DCC8000820737 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		5A553A15208E3BA100820737 /* JournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCell.swift; sourceTree = "<group>"; };
 		5A553A16208E3BA100820737 /* JournalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalCell.xib; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				5AFCA80420907B49005D3C39 /* StoryboardManager.swift */,
+				5A06EEB0213D8EB00098BD07 /* FileManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				5AA34F242086EF7B00E50B2B /* ViewController.swift in Sources */,
 				5AD07B9F213C3E8700C6F138 /* PlaceViewModel.swift in Sources */,
 				5AD07B9C213BE7CA00C6F138 /* Place.swift in Sources */,
+				5A06EEB1213D8EB00098BD07 /* FileManager.swift in Sources */,
 				5AD07B9A213BDD7900C6F138 /* PlaceCell.swift in Sources */,
 				5A7BDF5D209DA862008CAA3F /* EmotionCell.swift in Sources */,
 				5AFCA7FB209062FC005D3C39 /* PostImageView3.swift in Sources */,

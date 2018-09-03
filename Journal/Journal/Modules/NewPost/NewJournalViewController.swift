@@ -45,7 +45,7 @@ class NewJournalViewController: UIViewController {
 
     @IBAction func onPost(_ sender: UIBarButtonItem) {
         if let emoji = emoji, let place = place {
-            let journal = Journal(content: textView.text, location: place.title, emotion: emoji, photos: nil, images: photos)
+            let journal = Journal(content: textView.text, location: place, emotion: emoji, photos: nil, images: photos)
             delegate?.didAdd(journal)
         }
         

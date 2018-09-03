@@ -33,8 +33,10 @@ class JournalCell: UITableViewCell {
             } else {
                 heightImageViewContainerContstraint.constant = 0
             }
-            locationLabel.text = data.location
-            emotionImageView.image = UIImage(named: data.emotion.icon)
+            locationLabel.text = data.location?.title
+            if let emoji = data.emotion {
+                emotionImageView.image = UIImage(named: emoji.icon)
+            }
 //            } else {
 //                if data == 3 {
 //                    let view = PostImageView3.initFromNib()

@@ -6,24 +6,31 @@
 //  Copyright © 2018 Huy Ngo. All rights reserved.
 //
 
-import Foundation
-import UIKit
-class Journal {
-    var id: String = UUID().uuidString
-    var content: String = ""
-    var location: String = ""
-    var emotion: EmojiItem = EmojiItem(.happy)
-    var tags: [String] = []
-    var photos: [String] = []
-    var images: [UIImage]?
-    var datetime: Date = Date()
+import RealmSwift
+
+class Journal: Object {
+    @objc dynamic var id: String = UUID().uuidString
+    @objc dynamic var content: String = ""
+    @objc dynamic var location: Place? = Place()
+    @objc dynamic var emotion: EmojiItem? = EmojiItem(.happy)
+    @objc dynamic var datetime: Date = Date()
+    let imagesURL = List<String>()
+    let photos = List<String>()
     
-    init(content: String, location: String, emotion: EmojiItem, photos: [String]?, images: [UIImage]?) {
+    var images: [UIImage]?
+    var tags: [String] = []
+    
+    
+    //let photosList = List<String>()
+    //let tagList = List<String>()
+    
+    convenience init(content: String, location: Place, emotion: EmojiItem, photos: [String]?, images: [UIImage]?) {
+        self.init()
         self.content = content
         self.location = location
         self.emotion = emotion
         if let photos = photos {
-            self.photos = photos
+            photos.forEach { self.photos.append($0) }
         }
         if let images = images {
             self.images = images

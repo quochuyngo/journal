@@ -5,6 +5,7 @@
 //  Created by Quoc Huy Ngo on 5/13/18.
 //  Copyright © 2018 Huy Ngo. All rights reserved.
 //
+import RealmSwift
 
 enum EmojiType: String {
     case happy = "Happy"
@@ -15,9 +16,17 @@ enum EmojiType: String {
     case awful = "Awful"
 }
 
-struct EmojiItem {
-    var type: EmojiType
-    var isSelected: Bool
+class EmojiItem: Object {
+    var type: EmojiType {
+        get {
+            return EmojiType(rawValue: emojiType) ?? .happy
+        }
+        set {
+            emojiType = newValue.rawValue
+        }
+    }
+    var isSelected: Bool = false
+    @objc dynamic var emojiType: String = ""
     
     var icon: String {
         switch type {
@@ -36,7 +45,8 @@ struct EmojiItem {
         }
     }
     
-    init(_ emojiType: EmojiType, isSelected: Bool = false) {
+    convenience init(_ emojiType: EmojiType, isSelected: Bool = false) {
+        self.init()
         self.type = emojiType
         self.isSelected = isSelected
     }
