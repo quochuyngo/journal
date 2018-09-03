@@ -20,6 +20,8 @@ class NewJournalViewController: UIViewController {
     var delegate: NewJournalViewControllerDelegate?
     var photos: [UIImage]?
     var emoji: EmojiItem?
+    var place: Place?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.becomeFirstResponder()
@@ -42,8 +44,8 @@ class NewJournalViewController: UIViewController {
     }
 
     @IBAction func onPost(_ sender: UIBarButtonItem) {
-        if let emoji = emoji {
-            let journal = Journal(content: textView.text, location: "", emotion: emoji, photos: nil, images: photos)
+        if let emoji = emoji, let place = place {
+            let journal = Journal(content: textView.text, location: place.title, emotion: emoji, photos: nil, images: photos)
             delegate?.didAdd(journal)
         }
         
@@ -88,5 +90,9 @@ extension NewJournalViewController: AddingItemViewControllerDelegate {
     
     func emojiDidSelect(_ emoji: EmojiItem) {
         self.emoji = emoji
+    }
+    
+    func placeDidSelect(_ place: Place) {
+        self.place = place
     }
 }

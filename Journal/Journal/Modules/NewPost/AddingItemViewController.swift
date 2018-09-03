@@ -13,6 +13,7 @@ import Photos
 protocol AddingItemViewControllerDelegate: class {
     func photosDidSelect(_ assets: [PHAsset])
     func emojiDidSelect(_ emoji: EmojiItem)
+    func placeDidSelect(_ place: Place)
 }
 
 class AddingItemViewController: UIViewController {
@@ -58,13 +59,19 @@ class AddingItemViewController: UIViewController {
     }
     
     func addPlace() {
-        let vc = StoryboardManager.Main.getPlaceVC()
-        present(vc, animated: true, completion: nil)
+        let nav = StoryboardManager.Main.getPlaceVC()
+        if let vc = nav.viewControllers.first as? PlaceViewController {
+            vc.delegate = self
+        }
+        present(nav, animated: true, completion: nil)
     }
     
     @IBAction func onEmojiAdd(_ sender: UIButton) {
-        let vc = StoryboardManager.Main.getMotionVC()
-        present(vc, animated: true, completion: nil)
+        let nav = StoryboardManager.Main.getMotionVC()
+        if let vc = nav.viewControllers.first as? EmotionViewController {
+            vc.delegate = self
+        }
+        present(nav, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -130,5 +137,11 @@ extension AddingItemViewController: EmotionViewControllerDelegate {
 //            collectionView.reloadData()
 //        }
         delegate?.emojiDidSelect(emoji)
+    }
+}
+
+extension AddingItemViewController: PlaceViewControllerDelegate {
+    func didSelectPlace(_ place: Place) {
+        delegate?.placeDidSelect(place)
     }
 }

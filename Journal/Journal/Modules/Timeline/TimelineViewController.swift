@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import GooglePlaces
 
 class TimelineViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    let locationManager: CLLocationManager = CLLocationManager()
     var journalList = [Journal]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.requestWhenInUseAuthorization()
         setupTableView()
         if let customTabBar = tabBarController?.tabBar as? CustomTabBar {
             customTabBar.customDelegate = self

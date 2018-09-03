@@ -3,22 +3,62 @@ PODS:
   - BSImagePicker (2.7.1):
     - BSGridCollectionViewLayout (~> 1.2.0)
     - UIImageViewModeScaleAspect (= 1.5)
+  - GoogleMaps/Base (2.7.0)
+  - GooglePlaces (2.7.0):
+    - GoogleMaps/Base (= 2.7.0)
   - IQKeyboardManagerSwift (5.0.8)
+  - Realm (3.7.6):
+    - Realm/Headers (= 3.7.6)
+  - Realm/Headers (3.7.6)
+  - RealmSwift (3.7.6):
+    - Realm (= 3.7.6)
+  - RxCocoa (4.2.0):
+    - RxSwift (~> 4.0)
+  - RxRealm (0.7.5):
+    - RealmSwift (~> 3.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.2.0)
   - SnapKit (4.0.0)
   - UIImageViewModeScaleAspect (1.5)
 
 DEPENDENCIES:
   - BSImagePicker (~> 2.4)
+  - GooglePlaces
   - IQKeyboardManagerSwift
+  - RxCocoa (~> 4.0)
+  - RxRealm
+  - RxSwift (~> 4.0)
   - SnapKit (~> 4.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BSGridCollectionViewLayout
+    - BSImagePicker
+    - GoogleMaps
+    - GooglePlaces
+    - IQKeyboardManagerSwift
+    - Realm
+    - RealmSwift
+    - RxCocoa
+    - RxRealm
+    - RxSwift
+    - SnapKit
+    - UIImageViewModeScaleAspect
 
 SPEC CHECKSUMS:
   BSGridCollectionViewLayout: 8f12c8e1e08c47057f5a39a6828f4395f043d78f
   BSImagePicker: eb12948a6e71b9855c2c37723dfd989b9b4288bd
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
+  Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
+  RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxRealm: a6c6c0a07cb61f34209969ca6657734edfdfff30
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   UIImageViewModeScaleAspect: 11a790a0b9d248a13dc63e3a78991f1463b6d84e
 
-PODFILE CHECKSUM: 1f588293062184793ffb85280ca37aee651f93de
+PODFILE CHECKSUM: b057b8e30712b242d470d84532640199310e5582
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.2

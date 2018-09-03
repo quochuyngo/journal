@@ -33,7 +33,7 @@ class JournalCell: UITableViewCell {
             } else {
                 heightImageViewContainerContstraint.constant = 0
             }
-            
+            locationLabel.text = data.location
             emotionImageView.image = UIImage(named: data.emotion.icon)
 //            } else {
 //                if data == 3 {

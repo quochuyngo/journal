@@ -22,6 +22,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Access Camere</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>hgh</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Access Photos</string>
 	<key>UILaunchStoryboardName</key>

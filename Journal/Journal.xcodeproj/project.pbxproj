@@ -33,6 +33,9 @@
 		5AA34F372086EF7B00E50B2B /* JournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F362086EF7B00E50B2B /* JournalTests.swift */; };
 		5AA34F422086EF7B00E50B2B /* JournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F412086EF7B00E50B2B /* JournalUITests.swift */; };
 		5AB64F3A209778FE00ACD157 /* AddingItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB64F39209778FE00ACD157 /* AddingItemViewController.swift */; };
+		5AD07B9A213BDD7900C6F138 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD07B99213BDD7900C6F138 /* PlaceCell.swift */; };
+		5AD07B9C213BE7CA00C6F138 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD07B9B213BE7CA00C6F138 /* Place.swift */; };
+		5AD07B9F213C3E8700C6F138 /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD07B9E213C3E8700C6F138 /* PlaceViewModel.swift */; };
 		5AFCA7F3208F7469005D3C39 /* PostImageView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AFCA7F2208F7469005D3C39 /* PostImageView2.xib */; };
 		5AFCA7F5208F76BA005D3C39 /* PostImageView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA7F4208F76BA005D3C39 /* PostImageView1.swift */; };
 		5AFCA7F7208F77F3005D3C39 /* PostImageView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA7F6208F77F3005D3C39 /* PostImageView2.swift */; };
@@ -98,6 +101,9 @@
 		5AA34F412086EF7B00E50B2B /* JournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalUITests.swift; sourceTree = "<group>"; };
 		5AA34F432086EF7B00E50B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AB64F39209778FE00ACD157 /* AddingItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingItemViewController.swift; sourceTree = "<group>"; };
+		5AD07B99213BDD7900C6F138 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
+		5AD07B9B213BE7CA00C6F138 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		5AD07B9E213C3E8700C6F138 /* PlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
 		5AFCA7F2208F7469005D3C39 /* PostImageView2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostImageView2.xib; sourceTree = "<group>"; };
 		5AFCA7F4208F76BA005D3C39 /* PostImageView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView1.swift; sourceTree = "<group>"; };
 		5AFCA7F6208F77F3005D3C39 /* PostImageView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView2.swift; sourceTree = "<group>"; };
@@ -190,6 +196,7 @@
 		5A7BDF59209DA61E008CAA3F /* AddingItem */ = {
 			isa = PBXGroup;
 			children = (
+				5AD07B9D213C3E6B00C6F138 /* ViewModels */,
 				5A7BDF7320A46134008CAA3F /* Views */,
 				5A7BDF5A209DA65A008CAA3F /* EmotionViewController.swift */,
 				5A7BDF61209DB87E008CAA3F /* PlaceViewController.swift */,
@@ -221,6 +228,7 @@
 				5A7BDF7020A45F53008CAA3F /* Journal.swift */,
 				5A7BDF7620A6F821008CAA3F /* AddingItem.swift */,
 				5A7BDF7820A81B04008CAA3F /* EmojiItem.swift */,
+				5AD07B9B213BE7CA00C6F138 /* Place.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 				5A7BDF6E20A410EB008CAA3F /* AddingCell.swift */,
 				5A7BDF6A209F1297008CAA3F /* PhotoCell.swift */,
 				5A7BDF5C209DA862008CAA3F /* EmotionCell.swift */,
+				5AD07B99213BDD7900C6F138 /* PlaceCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,6 +304,14 @@
 			path = JournalUITests;
 			sourceTree = "<group>";
 		};
+		5AD07B9D213C3E6B00C6F138 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5AD07B9E213C3E8700C6F138 /* PlaceViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		5AFCA80020907AC2005D3C39 /* NewPost */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,7 +352,7 @@
 				5AA34F1B2086EF7A00E50B2B /* Frameworks */,
 				5AA34F1C2086EF7A00E50B2B /* Resources */,
 				F4829DC9261C34C44AA5C8B9 /* [CP] Embed Pods Frameworks */,
-				DCC6669085061E106117C3A0 /* [CP] Copy Pods Resources */,
+				43B34A624B870A7DED3250CE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -354,8 +371,6 @@
 				5AA34F2E2086EF7B00E50B2B /* Sources */,
 				5AA34F2F2086EF7B00E50B2B /* Frameworks */,
 				5AA34F302086EF7B00E50B2B /* Resources */,
-				A6AE651C90D5DB456D99A171 /* [CP] Embed Pods Frameworks */,
-				03C841236B7ABFA892BACB16 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -375,8 +390,6 @@
 				5AA34F392086EF7B00E50B2B /* Sources */,
 				5AA34F3A2086EF7B00E50B2B /* Frameworks */,
 				5AA34F3B2086EF7B00E50B2B /* Resources */,
-				8FC405DAFF558A5AAA1B2D8E /* [CP] Embed Pods Frameworks */,
-				8B2626A07F7244F6818003A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -401,6 +414,11 @@
 					5AA34F1D2086EF7A00E50B2B = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					5AA34F312086EF7B00E50B2B = {
 						CreatedOnToolsVersion = 9.2;
@@ -466,21 +484,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		03C841236B7ABFA892BACB16 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JournalTests/Pods-JournalTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		08BF2BABBD7E64A1C7450A61 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -499,19 +502,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8B2626A07F7244F6818003A4 /* [CP] Copy Pods Resources */ = {
+		43B34A624B870A7DED3250CE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Journal/Pods-Journal-resources.sh",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JournalUITests/Pods-JournalUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Journal/Pods-Journal-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8C3C9E75E4223FD14EF85579 /* [CP] Check Pods Manifest.lock */ = {
@@ -532,36 +538,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8FC405DAFF558A5AAA1B2D8E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JournalUITests/Pods-JournalUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A6AE651C90D5DB456D99A171 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JournalTests/Pods-JournalTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B082C8D2DD5F12B5B3385643 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -580,21 +556,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DCC6669085061E106117C3A0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Journal/Pods-Journal-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F4829DC9261C34C44AA5C8B9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -605,6 +566,11 @@
 				"${BUILT_PRODUCTS_DIR}/BSGridCollectionViewLayout/BSGridCollectionViewLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/BSImagePicker/BSImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/UIImageViewModeScaleAspect/UIImageViewModeScaleAspect.framework",
 			);
@@ -613,6 +579,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSGridCollectionViewLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIImageViewModeScaleAspect.framework",
 			);
@@ -629,6 +600,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AA34F242086EF7B00E50B2B /* ViewController.swift in Sources */,
+				5AD07B9F213C3E8700C6F138 /* PlaceViewModel.swift in Sources */,
+				5AD07B9C213BE7CA00C6F138 /* Place.swift in Sources */,
+				5AD07B9A213BDD7900C6F138 /* PlaceCell.swift in Sources */,
 				5A7BDF5D209DA862008CAA3F /* EmotionCell.swift in Sources */,
 				5AFCA7FB209062FC005D3C39 /* PostImageView3.swift in Sources */,
 				5A7BDF5B209DA65B008CAA3F /* EmotionViewController.swift in Sources */,
