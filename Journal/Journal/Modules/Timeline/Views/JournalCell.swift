@@ -23,13 +23,13 @@ class JournalCell: UITableViewCell {
     var data: Journal! {
         didSet {
             contentLabel.text = data.content
-            if let photos = data.images {
+            if data.images.count > 0 {
                 let view = PostImageView1.initFromNib()
                 imageContainerView.addSubview(view)
                 view.snp.makeConstraints { make -> Void in
                     make.edges.equalToSuperview()
                 }
-                view.imageView.image = photos.first!
+                view.imageView.image = data.images.first
             } else {
                 heightImageViewContainerContstraint.constant = 0
             }

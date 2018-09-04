@@ -15,25 +15,39 @@ class Journal: Object {
     @objc dynamic var emotion: EmojiItem? = EmojiItem(.happy)
     @objc dynamic var datetime: Date = Date()
     let imagesURL = List<String>()
-    let photos = List<String>()
+    let photosName = List<String>()
     
-    var images: [UIImage]?
+    var images: [UIImage] {
+        return getImagesFromName()
+    }
     var tags: [String] = []
     
-    
-    //let photosList = List<String>()
-    //let tagList = List<String>()
-    
-    convenience init(content: String, location: Place, emotion: EmojiItem, photos: [String]?, images: [UIImage]?) {
+    convenience init(content: String, location: Place, emotion: EmojiItem, images: [UIImage]?) {
         self.init()
         self.content = content
         self.location = location
         self.emotion = emotion
-        if let photos = photos {
-            photos.forEach { self.photos.append($0) }
+        if let images  = images {
+            setName(for: images)
         }
-        if let images = images {
-            self.images = images
+    }
+    
+    func setName(for images: [UIImage]) {
+        images.forEach {
+            let index = images.index(of: $0) ?? 0
+            let name = "\(id)-\(index).png"
+            photosName.append(name)
+            StorageManager.save($0, with: name)
         }
+    }
+    
+    func getImagesFromName() -> [UIImage] {
+        var images = [UIImage]()
+        photosName.forEach {
+            if let image = StorageManager.getImage(with: $0) {
+                images.append(image)
+            }
+        }
+        return images
     }
 }
