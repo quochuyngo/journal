@@ -11,7 +11,6 @@ import IQKeyboardManagerSwift
 import GooglePlaces
 import RealmSwift
 
-let goooglePlacesKey = "AIzaSyCVO_g1cq7_vniAYiz4aiASFb9os_DMwGI"
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
