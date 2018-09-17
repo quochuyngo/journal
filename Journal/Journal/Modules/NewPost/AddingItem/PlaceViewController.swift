@@ -19,26 +19,37 @@ class PlaceViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-
-    let disposeBag = DisposeBag()
-    let viewModel = PlaceViewModel(placesClient: GMSPlacesClient(), indicator: BehaviorRelay<Bool>(value: false))
+    @IBOutlet weak var warningLabel: UILabel!
     
-    var delegate: PlaceViewControllerDelegate?
+    let disposeBag = DisposeBag()
+    let viewModel = PlaceViewModel(placesClient: GMSPlacesClient(), indicator: BehaviorRelay<Bool>(value: false), warningError: BehaviorRelay<Bool>(value: true))
+    
+    weak var delegate: PlaceViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.activityIndicator.startAnimating()
+        searchBar.becomeFirstResponder()
+        if let place = viewModel.placeEdit {
+            searchBar.text = place.title
+        }
         bindingViewModel()
+    }
+    
+    deinit {
+        print("deinit PlaceVC")
     }
 
     func bindingViewModel() {
         let searchResult = searchBar.rx.text.orEmpty
             .throttle(0.3, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
-            .flatMapLatest { query -> Observable<[Place]> in
-                return query.isEmpty ? self.viewModel.getCurrentPlace() : self.viewModel.fectchPlaces(withQuery: query)
+            .flatMapLatest { [weak self] query -> Observable<[Place]> in
+                guard let strongSelf = self else { return Observable.just([])}
+                
+                return query.isEmpty ? Observable.just([]) : strongSelf.viewModel.fectchPlaces(withQuery: query)
             }.observeOn(MainScheduler.instance)
-        
+    
         searchResult.bind(to: tableView.rx.items(cellIdentifier: "PlaceCell", cellType: PlaceCell.self)) {
             (index, item, cell) in
             cell.place = item
@@ -53,6 +64,11 @@ class PlaceViewController: UIViewController {
         viewModel.indicator.asDriver().drive(onNext: {
             value in
             self.activityIndicator.isHidden = value
+        }).disposed(by: disposeBag)
+    
+        viewModel.warningError.asDriver().drive(onNext: {
+            value in
+            self.warningLabel.isHidden = value
         }).disposed(by: disposeBag)
     }
     

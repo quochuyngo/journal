@@ -8,46 +8,72 @@
 
 import RealmSwift
 
+let realm = try! Realm()
 class Journal: Object {
     @objc dynamic var id: String = UUID().uuidString
-    @objc dynamic var content: String = ""
+    @objc dynamic var content: String? = ""
     @objc dynamic var location: Place? = Place()
     @objc dynamic var emotion: EmojiItem? = EmojiItem(.happy)
-    @objc dynamic var datetime: Date = Date()
-    let imagesURL = List<String>()
-    let photosName = List<String>()
+    @objc dynamic var datetimeEdited: Date? = Date()
+    var imagesName = List<String>()
+    var tags = List<String>()
     
-    var images: [UIImage] {
-        return getImagesFromName()
+    var photos: [UIImage] {
+        get {
+            return getImagesFromName()
+        }
     }
-    var tags: [String] = []
     
-    convenience init(content: String, location: Place, emotion: EmojiItem, images: [UIImage]?) {
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    convenience init(content: String, location: Place?, emotion: EmojiItem, photos: [UIImage]?) {
         self.init()
         self.content = content
         self.location = location
         self.emotion = emotion
-        if let images  = images {
-            setName(for: images)
+        if let photos  = photos {
+            setName(for: photos)
         }
     }
     
     func setName(for images: [UIImage]) {
         images.forEach {
-            let index = images.index(of: $0) ?? 0
-            let name = "\(id)-\(index).png"
-            photosName.append(name)
+            let imageId = UUID().uuidString
+            let name = "\(imageId).jpeg"
+            imagesName.append(name)
             StorageManager.save($0, with: name)
         }
     }
     
-    func getImagesFromName() -> [UIImage] {
+    private func getImagesFromName() -> [UIImage] {
         var images = [UIImage]()
-        photosName.forEach {
+        imagesName.forEach {
             if let image = StorageManager.getImage(with: $0) {
                 images.append(image)
             }
         }
         return images
+    }
+    
+    func removeAllImages() {
+        imagesName.forEach {
+            StorageManager.removeImage(with: $0)
+        }
+    }
+}
+
+extension Journal {
+    func formatFullDateTime() -> String {
+        let formater = DateFormatter()
+        formater.dateFormat = "dd/MM/yyy HH:mm"
+        return formater.string(from: datetimeEdited!)
+    }
+    
+    func formatDate() -> String {
+        let formater = DateFormatter()
+        formater.dateFormat = "MMM dd"
+        return formater.string(from: datetimeEdited!)
     }
 }

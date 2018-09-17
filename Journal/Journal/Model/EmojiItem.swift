@@ -16,7 +16,7 @@ enum EmojiType: String {
     case awful = "Awful"
 }
 
-class EmojiItem: Object {
+class EmojiItem: Object, AddingItemProtocol {
     var type: EmojiType {
         get {
             return EmojiType(rawValue: emojiType) ?? .happy

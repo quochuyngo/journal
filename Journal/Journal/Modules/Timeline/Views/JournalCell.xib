@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,12 +30,6 @@
                                     <constraint firstAttribute="height" constant="24" id="kMo-gY-0Qx"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:45 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="see-Eb-26h">
-                                <rect key="frame" x="234" y="10" width="56" height="17"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                <color key="textColor" red="0.29019607843137252" green="0.79607843137254897" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I’m in the coffee, designing this app. I am so excited to build this one. I hope everybody would love to use it." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3H-z8-RTb">
                                 <rect key="frame" x="10" y="57.5" width="280" height="50.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -50,38 +44,50 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#thecoffeehouse  #weekend" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zm-iI-xLW">
-                                <rect key="frame" x="10" y="114" width="280" height="14.5"/>
+                                <rect key="frame" x="10" y="114" width="164.5" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phan Dang Luu, Ho Chi Minh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyG-GR-O2R">
-                                <rect key="frame" x="10" y="38" width="150" height="13.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1hr Phan Dang Luu, Ho Chi Minh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyG-GR-O2R">
+                                <rect key="frame" x="10" y="38" width="169.5" height="13.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_more_btn" translatesAutoresizingMaskIntoConstraints="NO" id="OwJ-SJ-cy9">
+                                <rect key="frame" x="274" y="10" width="16" height="16"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgL-3w-9ER">
+                                <rect key="frame" x="260" y="0.0" width="40" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="0kM-Nk-en0"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="onMoreButtonTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4Mo-XJ-qcr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="iyG-GR-O2R" firstAttribute="top" secondItem="l20-gJ-DS8" secondAttribute="bottom" constant="4" id="60s-8d-ZvM"/>
-                            <constraint firstItem="see-Eb-26h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="l20-gJ-DS8" secondAttribute="trailing" constant="20" id="9TZ-cN-T8B"/>
+                            <constraint firstItem="fs3-VG-bAC" firstAttribute="trailing" secondItem="n3H-z8-RTb" secondAttribute="trailing" id="8NL-Le-5D7"/>
+                            <constraint firstAttribute="trailing" secondItem="OwJ-SJ-cy9" secondAttribute="trailing" constant="10" id="B0w-mn-PSK"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fs3-VG-bAC" secondAttribute="bottom" constant="12" id="ECy-YC-uaC"/>
+                            <constraint firstItem="EgL-3w-9ER" firstAttribute="top" secondItem="4Um-9z-LFr" secondAttribute="top" id="GU2-kI-b1L"/>
                             <constraint firstItem="2Zm-iI-xLW" firstAttribute="top" secondItem="n3H-z8-RTb" secondAttribute="bottom" constant="6" id="IoT-X3-tGQ"/>
-                            <constraint firstItem="n3H-z8-RTb" firstAttribute="trailing" secondItem="see-Eb-26h" secondAttribute="trailing" id="Luv-rK-Ubv"/>
+                            <constraint firstItem="OwJ-SJ-cy9" firstAttribute="top" secondItem="l20-gJ-DS8" secondAttribute="top" id="OnK-JQ-hEh"/>
                             <constraint firstItem="l20-gJ-DS8" firstAttribute="leading" secondItem="4Um-9z-LFr" secondAttribute="leading" constant="10" id="PMT-qd-A2R"/>
                             <constraint firstItem="fs3-VG-bAC" firstAttribute="leading" secondItem="l20-gJ-DS8" secondAttribute="leading" id="Tgn-BR-8KO"/>
+                            <constraint firstAttribute="trailing" secondItem="n3H-z8-RTb" secondAttribute="trailing" constant="10" id="XGV-4F-mEJ"/>
                             <constraint firstItem="iyG-GR-O2R" firstAttribute="leading" secondItem="l20-gJ-DS8" secondAttribute="leading" id="XHZ-nD-VYn"/>
                             <constraint firstItem="fs3-VG-bAC" firstAttribute="top" secondItem="2Zm-iI-xLW" secondAttribute="bottom" constant="12" id="Xre-NO-NQG"/>
                             <constraint firstItem="l20-gJ-DS8" firstAttribute="top" secondItem="4Um-9z-LFr" secondAttribute="top" constant="10" id="a0p-76-mqy"/>
                             <constraint firstItem="n3H-z8-RTb" firstAttribute="top" secondItem="iyG-GR-O2R" secondAttribute="bottom" constant="6" id="hbO-LB-kpX"/>
-                            <constraint firstItem="fs3-VG-bAC" firstAttribute="trailing" secondItem="see-Eb-26h" secondAttribute="trailing" id="mrr-Db-nho"/>
+                            <constraint firstAttribute="trailing" secondItem="EgL-3w-9ER" secondAttribute="trailing" id="n8G-Nb-Y1z"/>
                             <constraint firstItem="2Zm-iI-xLW" firstAttribute="leading" secondItem="l20-gJ-DS8" secondAttribute="leading" id="uUc-kb-ztn"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iyG-GR-O2R" secondAttribute="trailing" constant="10" id="vEQ-m0-gZW"/>
                             <constraint firstItem="n3H-z8-RTb" firstAttribute="leading" secondItem="l20-gJ-DS8" secondAttribute="leading" id="y6f-uu-Bdi"/>
-                            <constraint firstItem="see-Eb-26h" firstAttribute="top" secondItem="l20-gJ-DS8" secondAttribute="top" id="yGe-FL-sVO"/>
-                            <constraint firstItem="2Zm-iI-xLW" firstAttribute="trailing" secondItem="see-Eb-26h" secondAttribute="trailing" id="yKD-is-Yb5"/>
-                            <constraint firstAttribute="trailing" secondItem="see-Eb-26h" secondAttribute="trailing" constant="10" id="zXK-cz-i7W"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -98,7 +104,6 @@
             <connections>
                 <outlet property="bgView" destination="4Um-9z-LFr" id="suy-vh-Vk2"/>
                 <outlet property="contentLabel" destination="n3H-z8-RTb" id="B7Y-7a-Ezz"/>
-                <outlet property="dateTimeLabel" destination="see-Eb-26h" id="QnY-9f-QfE"/>
                 <outlet property="emotionImageView" destination="l20-gJ-DS8" id="FcD-RK-r62"/>
                 <outlet property="heightImageViewContainerContstraint" destination="HsL-OS-cl8" id="D55-F9-9aT"/>
                 <outlet property="imageContainerView" destination="fs3-VG-bAC" id="OWf-1y-DPI"/>
@@ -109,6 +114,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="ic_more_btn" width="16" height="16"/>
         <image name="ic_smiling" width="64" height="64"/>
     </resources>
 </document>

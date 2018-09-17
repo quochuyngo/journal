@@ -20,11 +20,18 @@ class AddingItemViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate: AddingItemViewControllerDelegate?
-    var listItem: [AddingItem] = [AddingItem(.location), AddingItem(.emotion), AddingItem(.tag), AddingItem(.camera)]
+    var listItem: [AddingItem] = [AddingItem(.location), AddingItem(.emotion), AddingItem(.tag), AddingItem(.photo)]
     var currentItemSelected: AddingItem?
+    var journal: Journal?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        setupAddingItem()
+    }
+    
+    deinit {
+        print("deinit AddingItemVC")
     }
     
     func setupCollectionView() {
@@ -34,6 +41,14 @@ class AddingItemViewController: UIViewController {
             collectionViewFlow.scrollDirection = .horizontal
         }
         
+    }
+    
+    func setupAddingItem() {
+        guard let journal = journal else { return }
+        for index in 0..<listItem.count {
+            listItem[index].isSelected = true
+        }
+        collectionView.reloadData()
     }
 
     func addPhoto() {
@@ -62,14 +77,7 @@ class AddingItemViewController: UIViewController {
         let nav = StoryboardManager.Main.getPlaceVC()
         if let vc = nav.viewControllers.first as? PlaceViewController {
             vc.delegate = self
-        }
-        present(nav, animated: true, completion: nil)
-    }
-    
-    @IBAction func onEmojiAdd(_ sender: UIButton) {
-        let nav = StoryboardManager.Main.getMotionVC()
-        if let vc = nav.viewControllers.first as? EmotionViewController {
-            vc.delegate = self
+            vc.viewModel.placeEdit = journal?.location
         }
         present(nav, animated: true, completion: nil)
     }
@@ -106,7 +114,7 @@ extension AddingItemViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        //print(indexPath.row)
         currentItemSelected = listItem[indexPath.row]
         switch listItem[indexPath.row].itemType {
         case .location:
@@ -116,12 +124,13 @@ extension AddingItemViewController: UICollectionViewDelegateFlowLayout {
             let nav = StoryboardManager.Main.getMotionVC()
             if let vc = nav.viewControllers.first as? EmotionViewController {
                 vc.delegate = self
+                vc.emoji = journal?.emotion
                 present(nav, animated: true, completion: nil)
             }
             break
         case .tag:
             break
-        case .camera:
+        case .photo:
             addPhoto()
             break
         }

@@ -7,7 +7,11 @@
 //
 import RealmSwift
 
-class Place: Object {
+protocol AddingItemProtocol {
+    
+}
+
+class Place: Object, AddingItemProtocol {
     @objc dynamic var title: String = ""
     @objc dynamic var address: String = ""
     

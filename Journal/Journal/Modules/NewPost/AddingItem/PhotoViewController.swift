@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import SnapKit
 
+protocol PhotoViewControllerDelegate: class {
+    func photo(didRemoveAt indexPath: IndexPath)
+}
 class PhotoViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    weak var delegate: PhotoViewControllerDelegate?
+    
     var photos: [UIImage]? {
         didSet {
             collectionView.reloadData()
@@ -26,6 +32,10 @@ class PhotoViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    deinit {
+        print("deinit PhotoVC")
+    }
 }
 
 extension PhotoViewController: UICollectionViewDataSource {
@@ -34,7 +44,10 @@ extension PhotoViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let photos = photos else { return 0}
+        guard let photos = photos else {
+            return 0
+        }
+        print(photos.count)
         return photos.count
     }
     
@@ -61,6 +74,9 @@ extension PhotoViewController: UICollectionViewDelegateFlowLayout {
 extension PhotoViewController: PhotoCellDelegate {
     func onRemovePhoto(at indexPath: IndexPath) {
         photos?.remove(at: indexPath.row)
-        collectionView.reloadData()
+        delegate?.photo(didRemoveAt: indexPath)
+        if photos?.count != 0 {
+            collectionView.reloadData()
+        }
     }
 }

@@ -40,7 +40,7 @@
             </objects>
             <point key="canvasLocation" x="519" y="34"/>
         </scene>
-        <!--TimeLine-->
+        <!--Stories-->
         <scene sceneID="dzQ-Lt-X8v">
             <objects>
                 <viewController id="oei-Fs-h6U" customClass="TimelineViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,7 +62,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jyh-7A-Cs1"/>
                     </view>
-                    <navigationItem key="navigationItem" title="TimeLine" id="C8u-m9-2fd"/>
+                    <navigationItem key="navigationItem" title="Stories" id="C8u-m9-2fd"/>
                     <connections>
                         <outlet property="tableView" destination="u3r-Bg-x6h" id="LrG-Qd-MDT"/>
                     </connections>
@@ -137,43 +137,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wsw-b4-vw8">
-                                <rect key="frame" x="0.0" y="611" width="375" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="2is-Lf-T2p"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="JyZ-pc-tdl" kind="embed" id="khT-FJ-qhP"/>
-                                </connections>
-                            </containerView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" text="How was your day?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2YX-Th-VPf">
-                                <rect key="frame" x="0.0" y="84" width="375" height="527"/>
-                                <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0NY-Zc-ez8">
-                                <rect key="frame" x="0.0" y="491" width="375" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="vT6-Hj-2ld"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="NDu-5s-tf8" kind="embed" identifier="PhotoVCSegue" id="wo6-6Q-pe4"/>
-                                </connections>
-                            </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bMu-hp-mlu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2YX-Th-VPf" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="427"/>
+                                        <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Want to keep your stories?"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0NY-Zc-ez8">
+                                        <rect key="frame" x="0.0" y="427" width="375" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="vT6-Hj-2ld"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="NDu-5s-tf8" kind="embed" identifier="PhotoVCSegue" id="wo6-6Q-pe4"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wsw-b4-vw8">
+                                        <rect key="frame" x="0.0" y="547" width="375" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="2is-Lf-T2p"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="JyZ-pc-tdl" kind="embed" id="khT-FJ-qhP"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Wsw-b4-vw8" firstAttribute="top" secondItem="2YX-Th-VPf" secondAttribute="bottom" id="2aC-RG-7DS"/>
-                            <constraint firstItem="Wsw-b4-vw8" firstAttribute="top" secondItem="0NY-Zc-ez8" secondAttribute="bottom" id="4a7-14-WyT"/>
-                            <constraint firstItem="2YX-Th-VPf" firstAttribute="leading" secondItem="DDx-Bp-RGZ" secondAttribute="leading" id="Q7T-48-qjP"/>
-                            <constraint firstItem="Wsw-b4-vw8" firstAttribute="leading" secondItem="DDx-Bp-RGZ" secondAttribute="leading" id="TLy-Oy-i0G"/>
-                            <constraint firstItem="Wsw-b4-vw8" firstAttribute="bottom" secondItem="DDx-Bp-RGZ" secondAttribute="bottom" id="fNa-if-9N3"/>
-                            <constraint firstItem="DDx-Bp-RGZ" firstAttribute="trailing" secondItem="2YX-Th-VPf" secondAttribute="trailing" id="fcp-Vf-bFq"/>
-                            <constraint firstItem="2YX-Th-VPf" firstAttribute="top" secondItem="DDx-Bp-RGZ" secondAttribute="top" constant="20" id="i5h-4m-fDm"/>
-                            <constraint firstItem="DDx-Bp-RGZ" firstAttribute="trailing" secondItem="0NY-Zc-ez8" secondAttribute="trailing" id="lMz-A4-aCX"/>
-                            <constraint firstItem="0NY-Zc-ez8" firstAttribute="leading" secondItem="DDx-Bp-RGZ" secondAttribute="leading" id="mqy-Bl-yfH"/>
-                            <constraint firstItem="Wsw-b4-vw8" firstAttribute="trailing" secondItem="DDx-Bp-RGZ" secondAttribute="trailing" id="xve-9F-dx5"/>
+                            <constraint firstItem="bMu-hp-mlu" firstAttribute="leading" secondItem="DDx-Bp-RGZ" secondAttribute="leading" id="28I-KO-sGX"/>
+                            <constraint firstAttribute="bottom" secondItem="bMu-hp-mlu" secondAttribute="bottom" id="MNi-0x-mFe"/>
+                            <constraint firstAttribute="trailing" secondItem="bMu-hp-mlu" secondAttribute="trailing" id="an2-Un-8aq"/>
+                            <constraint firstItem="bMu-hp-mlu" firstAttribute="top" secondItem="DDx-Bp-RGZ" secondAttribute="top" id="pRA-eQ-m4a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DDx-Bp-RGZ"/>
                     </view>
@@ -192,6 +194,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bottomConstraint" destination="MNi-0x-mFe" id="juz-UE-Fgk"/>
                         <outlet property="heightPhotoCollectionView" destination="vT6-Hj-2ld" id="ChQ-wG-a4R"/>
                         <outlet property="textView" destination="2YX-Th-VPf" id="6D8-mS-EH8"/>
                     </connections>
@@ -397,12 +400,20 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aPh-yP-i0J">
                                 <rect key="frame" x="177" y="355.5" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check your internet connection!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3p-Go-Tdb">
+                                <rect key="frame" x="69.5" y="200" width="236" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wWH-nm-5CV" firstAttribute="top" secondItem="maP-D6-DrS" secondAttribute="bottom" id="4zi-Tv-2TM"/>
                             <constraint firstItem="wWH-nm-5CV" firstAttribute="leading" secondItem="mRb-Ow-DOy" secondAttribute="leading" id="9ds-do-x0M"/>
+                            <constraint firstItem="u3p-Go-Tdb" firstAttribute="centerX" secondItem="mRb-Ow-DOy" secondAttribute="centerX" id="Aud-iQ-bIg"/>
                             <constraint firstItem="mRb-Ow-DOy" firstAttribute="trailing" secondItem="wWH-nm-5CV" secondAttribute="trailing" id="AzJ-0Q-2eD"/>
+                            <constraint firstItem="u3p-Go-Tdb" firstAttribute="top" secondItem="maP-D6-DrS" secondAttribute="bottom" constant="80" id="DOu-pB-IcI"/>
                             <constraint firstItem="aPh-yP-i0J" firstAttribute="centerY" secondItem="mRb-Ow-DOy" secondAttribute="centerY" id="a80-Lz-Bi4"/>
                             <constraint firstItem="maP-D6-DrS" firstAttribute="top" secondItem="mRb-Ow-DOy" secondAttribute="top" id="ce6-wK-NX5"/>
                             <constraint firstItem="mRb-Ow-DOy" firstAttribute="bottom" secondItem="wWH-nm-5CV" secondAttribute="bottom" id="clc-ov-9Zf"/>
@@ -423,6 +434,7 @@
                         <outlet property="activityIndicator" destination="aPh-yP-i0J" id="Yur-NP-Yqq"/>
                         <outlet property="searchBar" destination="maP-D6-DrS" id="fBP-pL-CGa"/>
                         <outlet property="tableView" destination="wWH-nm-5CV" id="8pF-qg-N67"/>
+                        <outlet property="warningLabel" destination="u3p-Go-Tdb" id="gUh-IP-9Ji"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t3T-fO-Nwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -655,7 +667,7 @@
                             <constraint firstAttribute="trailing" secondItem="u7H-5L-Mff" secondAttribute="trailing" id="79y-eK-6bk"/>
                             <constraint firstItem="u7H-5L-Mff" firstAttribute="top" secondItem="YW2-CX-7Q9" secondAttribute="top" id="87m-7w-YNu"/>
                             <constraint firstItem="u7H-5L-Mff" firstAttribute="leading" secondItem="YW2-CX-7Q9" secondAttribute="leading" id="HUr-J1-KY5"/>
-                            <constraint firstAttribute="bottom" secondItem="u7H-5L-Mff" secondAttribute="bottom" id="SmX-5f-i8b"/>
+                            <constraint firstItem="u7H-5L-Mff" firstAttribute="height" secondItem="YW2-CX-7Q9" secondAttribute="height" id="jwk-nM-Okg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="15X-Vb-pMi"/>
                     </view>

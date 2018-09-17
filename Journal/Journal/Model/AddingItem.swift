@@ -11,7 +11,7 @@ enum ItemType {
     case location
     case emotion
     case tag
-    case camera
+    case photo
 }
 
 struct AddingItem {
@@ -27,7 +27,7 @@ struct AddingItem {
                 return isSelected ? "ic_happiness_selected" : "ic_happiness"
             case .tag:
                 return isSelected ? "ic_tag_selected" : "ic_tag"
-            case .camera:
+            case .photo:
                 return isSelected ? "ic_camera_selected" : "ic_camera"
             }
         }

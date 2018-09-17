@@ -9,46 +9,76 @@
 import UIKit
 import Photos
 
-protocol NewJournalViewControllerDelegate {
-    func didAdd(_ journal: Journal)
+protocol NewJournalViewControllerDelegate: class {
+    func didAddJournal(_ journal: Journal?)
 }
 class NewJournalViewController: UIViewController {
 
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var heightPhotoCollectionView: NSLayoutConstraint!
     @IBOutlet weak var textView: UITextView!
+    let viewModel = NewJournalViewModel()
     var photoVC: PhotoViewController?
-    var delegate: NewJournalViewControllerDelegate?
-    var photos: [UIImage]?
-    var emoji: EmojiItem?
-    var place: Place?
+    var addingItemVC: AddingItemViewController?
+    
+    weak var delegate: NewJournalViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.becomeFirstResponder()
-        heightPhotoCollectionView.constant = 0
+        photoView(isShow: false)
+        NotificationCenter.default.addObserver(self, selector: #selector(NewJournalViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NewJournalViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+       configEditJournal()
     }
 
+    deinit {
+        print("deinit NewJournal")
+    }
+    
+    func configEditJournal() {
+        guard let journal = viewModel.editJournal else { return }
+        textView.text = journal.content
+        if journal.photos.count > 0 {
+            viewModel.photos = journal.photos
+            photoVC?.photos = journal.photos
+            photoView(isShow: true)
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PhotoVCSegue" {
             guard let vc = segue.destination as? PhotoViewController else {
                 return
             }
             photoVC = vc
+            vc.delegate = self
         } else {
             guard let vc = segue.destination as? AddingItemViewController else {
                 return
             }
+            addingItemVC = vc
+            vc.journal = viewModel.editJournal
             vc.delegate = self
         }
         
     }
 
     @IBAction func onPost(_ sender: UIBarButtonItem) {
-        if let emoji = emoji, let place = place {
-            let journal = Journal(content: textView.text, location: place, emotion: emoji, images: photos)
-            delegate?.didAdd(journal)
+        if let _ = viewModel.editJournal {
+            viewModel.tempJournal.content = textView.text
+            viewModel.edit()
+ 
+        } else {
+            
+            if let emoji = viewModel.tempJournal.emotion {
+                let journal = Journal(content: textView.text, location: viewModel.tempJournal.location, emotion: emoji, photos: viewModel.photos)
+                viewModel.create(journal)
+            } else {
+                let alert = AlertManager.getAlert(withType: .create, handler: nil)
+                present(alert, animated: true, completion: nil)
+            }
         }
-        
+        delegate?.didAddJournal(nil)
         dismiss(animated: true, completion: nil)
     }
     @IBAction func onCancel(_ sender: UIBarButtonItem) {
@@ -67,32 +97,59 @@ class NewJournalViewController: UIViewController {
         return thumbnail
     }
 
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            bottomConstraint.constant = keyboardSize.height
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        bottomConstraint.constant = 0
+    }
+    
+    func photoView(isShow: Bool) {
+        heightPhotoCollectionView.constant = isShow ? 120*ratio : 0
+        updateViewConstraints()
+    }
 }
 
 extension NewJournalViewController: AddingItemViewControllerDelegate {
     func photosDidSelect(_ assets: [PHAsset]) {
         DispatchQueue.global().async { [unowned self] in
-            var photos = [UIImage]()
             assets.forEach {
-                photos.append(self.getAssetThumbnail($0))
+                let photo = self.getAssetThumbnail($0)
+                self.viewModel.photos.append(photo)
+                if let _ = self.viewModel.editJournal {
+                    self.viewModel.newPhotosAdded.append(photo)
+                }
             }
             DispatchQueue.main.async { [unowned self] in
-                self.photos = photos
-                self.photoVC?.photos = photos
-                if photos.count > 0 {
-                    self.heightPhotoCollectionView.constant = 120*ratio
-                    let name = assets[0].value(forKey: "filename") as! String
-                    try! ImageStore.store(image: photos[0], name: name)
-                }
+                print(self.viewModel.photos.count)
+                self.photoVC?.photos = self.viewModel.photos
+                self.photoView(isShow: self.viewModel.photos.count > 0)
             }
         }
     }
     
     func emojiDidSelect(_ emoji: EmojiItem) {
-        self.emoji = emoji
+        viewModel.tempJournal.emotion = emoji
     }
     
     func placeDidSelect(_ place: Place) {
-        self.place = place
+        viewModel.tempJournal.location = place
+    }
+}
+
+extension NewJournalViewController: PhotoViewControllerDelegate  {
+    func photo(didRemoveAt indexPath: IndexPath) {
+        // MARK: Handle in ViewModel
+        viewModel.photos.remove(at: indexPath.row)
+        photoView(isShow: viewModel.photos.count > 0)
+    
+        if let _ = viewModel.editJournal {
+            viewModel.removePhoto(at: indexPath.row)
+        } else {
+            
+        }
     }
 }
