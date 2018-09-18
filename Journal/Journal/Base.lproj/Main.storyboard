@@ -196,6 +196,7 @@
                     <connections>
                         <outlet property="bottomConstraint" destination="MNi-0x-mFe" id="juz-UE-Fgk"/>
                         <outlet property="heightPhotoCollectionView" destination="vT6-Hj-2ld" id="ChQ-wG-a4R"/>
+                        <outlet property="postButton" destination="xgp-rd-5xQ" id="dDe-wL-sNj"/>
                         <outlet property="textView" destination="2YX-Th-VPf" id="6D8-mS-EH8"/>
                     </connections>
                 </viewController>

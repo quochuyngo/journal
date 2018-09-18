@@ -20,7 +20,7 @@ class Journal: Object {
     
     var photos: [UIImage] {
         get {
-            return getImagesFromName()
+            return getImages(from: imagesName)
         }
     }
     
@@ -47,7 +47,7 @@ class Journal: Object {
         }
     }
     
-    private func getImagesFromName() -> [UIImage] {
+    private func getImages(from imagesName: List<String>) -> [UIImage] {
         var images = [UIImage]()
         imagesName.forEach {
             if let image = StorageManager.getImage(with: $0) {

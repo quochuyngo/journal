@@ -24,12 +24,4 @@ class TimelineViewModel {
         journal.removeAllImages()
         DBManager.default.delete(journal)
     }
-//    
-//    func edit(_ journal: Journal) {
-//        DBManager.default.
-//    }
-//    
-//    func edit(with emoji: EmojiItem?, place: Place?, image) {
-//        
-//    }
 }

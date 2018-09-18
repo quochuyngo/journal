@@ -9,15 +9,15 @@
 import UIKit
 import IQKeyboardManagerSwift
 import GooglePlaces
-import RealmSwift
-
+import RealmSwift 
+let googlePlacesKey = "AIzaSyCVO_g1cq7_vniAYiz4aiASFb9os_DMwGI"
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.statusBarStyle = .lightContent
-        GMSPlacesClient.provideAPIKey(goooglePlacesKey)
+        GMSPlacesClient.provideAPIKey(googlePlacesKey)
         // Override point for customization after application launch.
         //IQKeyboardManager.sharedManager().enable = true
         

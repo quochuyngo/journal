@@ -10,10 +10,10 @@ target 'Journal' do
   pod 'RxCocoa', '~> 4.0'
   pod 'SnapKit', '~> 4.0.0'
   pod 'BSImagePicker', '~> 2.4'
-  //pod 'IQKeyboardManagerSwift'
   pod 'GooglePlaces'
   pod 'RxRealm'
   pod 'KMPlaceholderTextView'
+  pod 'IQKeyboardManagerSwift'
   target 'JournalTests' do
     inherit! :search_paths
     # Pods for testing

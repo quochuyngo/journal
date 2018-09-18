@@ -14,6 +14,7 @@ protocol NewJournalViewControllerDelegate: class {
 }
 class NewJournalViewController: UIViewController {
 
+    @IBOutlet weak var postButton: UIBarButtonItem!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var heightPhotoCollectionView: NSLayoutConstraint!
     @IBOutlet weak var textView: UITextView!
@@ -38,12 +39,13 @@ class NewJournalViewController: UIViewController {
     
     func configEditJournal() {
         guard let journal = viewModel.editJournal else { return }
+        postButton.title = "Save"
         textView.text = journal.content
-        if journal.photos.count > 0 {
-            viewModel.photos = journal.photos
-            photoVC?.photos = journal.photos
-            photoView(isShow: true)
-        }
+        let photos = journal.photos
+        viewModel.photos = photos
+        photoVC?.photos = photos
+        photoView(isShow: journal.imagesName.count > 0)
+    
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PhotoVCSegue" {
