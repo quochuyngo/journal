@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="374" id="KGk-i7-Jjw" customClass="JournalCell" customModule="Journal" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="374" id="KGk-i7-Jjw" customClass="JournalMediaCell" customModule="Journal" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="374"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -31,24 +31,18 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I’m in the coffee, designing this app. I am so excited to build this one. I hope everybody would love to use it." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3H-z8-RTb">
-                                <rect key="frame" x="10" y="57.5" width="280" height="50.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="10" y="261" width="290" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fs3-VG-bAC">
-                                <rect key="frame" x="10" y="140.5" width="280" height="190"/>
+                                <rect key="frame" x="10" y="59" width="280" height="190"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="190" id="HsL-OS-cl8"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#thecoffeehouse  #weekend" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zm-iI-xLW">
-                                <rect key="frame" x="10" y="114" width="164.5" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                <color key="textColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1hr Phan Dang Luu, Ho Chi Minh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyG-GR-O2R">
                                 <rect key="frame" x="10" y="38" width="169.5" height="13.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -67,27 +61,34 @@
                                     <action selector="onMoreButtonTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4Mo-XJ-qcr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#thecoffeehouse  #weekend" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zm-iI-xLW">
+                                <rect key="frame" x="10" y="325" width="290" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <color key="textColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="n3H-z8-RTb" firstAttribute="leading" secondItem="l20-gJ-DS8" secondAttribute="leading" id="1yd-tP-2sB"/>
+                            <constraint firstItem="2Zm-iI-xLW" firstAttribute="trailing" secondItem="n3H-z8-RTb" secondAttribute="trailing" id="4Su-Iy-DFQ"/>
                             <constraint firstItem="iyG-GR-O2R" firstAttribute="top" secondItem="l20-gJ-DS8" secondAttribute="bottom" constant="4" id="60s-8d-ZvM"/>
-                            <constraint firstItem="fs3-VG-bAC" firstAttribute="trailing" secondItem="n3H-z8-RTb" secondAttribute="trailing" id="8NL-Le-5D7"/>
                             <constraint firstAttribute="trailing" secondItem="OwJ-SJ-cy9" secondAttribute="trailing" constant="10" id="B0w-mn-PSK"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fs3-VG-bAC" secondAttribute="bottom" constant="12" id="ECy-YC-uaC"/>
                             <constraint firstItem="EgL-3w-9ER" firstAttribute="top" secondItem="4Um-9z-LFr" secondAttribute="top" id="GU2-kI-b1L"/>
-                            <constraint firstItem="2Zm-iI-xLW" firstAttribute="top" secondItem="n3H-z8-RTb" secondAttribute="bottom" constant="6" id="IoT-X3-tGQ"/>
+                            <constraint firstItem="2Zm-iI-xLW" firstAttribute="top" secondItem="n3H-z8-RTb" secondAttribute="bottom" constant="10" id="I4F-yC-1G0"/>
                             <constraint firstItem="OwJ-SJ-cy9" firstAttribute="top" secondItem="l20-gJ-DS8" secondAttribute="top" id="OnK-JQ-hEh"/>
                             <constraint firstItem="l20-gJ-DS8" firstAttribute="leading" secondItem="4Um-9z-LFr" secondAttribute="leading" constant="10" id="PMT-qd-A2R"/>
-                            <constraint firstItem="fs3-VG-bAC" firstAttribute="leading" secondItem="l20-gJ-DS8" secondAttribute="leading" id="Tgn-BR-8KO"/>
-                            <constraint firstAttribute="trailing" secondItem="n3H-z8-RTb" secondAttribute="trailing" constant="10" id="XGV-4F-mEJ"/>
+                            <constraint firstAttribute="trailing" secondItem="fs3-VG-bAC" secondAttribute="trailing" constant="10" id="QIZ-Vy-tvf"/>
+                            <constraint firstItem="n3H-z8-RTb" firstAttribute="top" secondItem="fs3-VG-bAC" secondAttribute="bottom" constant="12" id="TP1-OL-A0L"/>
+                            <constraint firstItem="2Zm-iI-xLW" firstAttribute="leading" secondItem="n3H-z8-RTb" secondAttribute="leading" id="Ujk-SW-kNi"/>
                             <constraint firstItem="iyG-GR-O2R" firstAttribute="leading" secondItem="l20-gJ-DS8" secondAttribute="leading" id="XHZ-nD-VYn"/>
-                            <constraint firstItem="fs3-VG-bAC" firstAttribute="top" secondItem="2Zm-iI-xLW" secondAttribute="bottom" constant="12" id="Xre-NO-NQG"/>
+                            <constraint firstItem="fs3-VG-bAC" firstAttribute="leading" secondItem="4Um-9z-LFr" secondAttribute="leading" constant="10" id="ZmR-bb-mUl"/>
                             <constraint firstItem="l20-gJ-DS8" firstAttribute="top" secondItem="4Um-9z-LFr" secondAttribute="top" constant="10" id="a0p-76-mqy"/>
-                            <constraint firstItem="n3H-z8-RTb" firstAttribute="top" secondItem="iyG-GR-O2R" secondAttribute="bottom" constant="6" id="hbO-LB-kpX"/>
+                            <constraint firstItem="n3H-z8-RTb" firstAttribute="trailing" secondItem="EgL-3w-9ER" secondAttribute="trailing" id="hUP-WZ-JUN"/>
                             <constraint firstAttribute="trailing" secondItem="EgL-3w-9ER" secondAttribute="trailing" id="n8G-Nb-Y1z"/>
-                            <constraint firstItem="2Zm-iI-xLW" firstAttribute="leading" secondItem="l20-gJ-DS8" secondAttribute="leading" id="uUc-kb-ztn"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iyG-GR-O2R" secondAttribute="trailing" constant="10" id="vEQ-m0-gZW"/>
-                            <constraint firstItem="n3H-z8-RTb" firstAttribute="leading" secondItem="l20-gJ-DS8" secondAttribute="leading" id="y6f-uu-Bdi"/>
+                            <constraint firstItem="fs3-VG-bAC" firstAttribute="top" secondItem="iyG-GR-O2R" secondAttribute="bottom" constant="8" id="viC-10-ulk"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="2Zm-iI-xLW" secondAttribute="bottom" constant="12" id="xqS-mF-IOB"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -105,12 +106,12 @@
                 <outlet property="bgView" destination="4Um-9z-LFr" id="suy-vh-Vk2"/>
                 <outlet property="contentLabel" destination="n3H-z8-RTb" id="B7Y-7a-Ezz"/>
                 <outlet property="emotionImageView" destination="l20-gJ-DS8" id="FcD-RK-r62"/>
-                <outlet property="heightImageViewContainerContstraint" destination="HsL-OS-cl8" id="D55-F9-9aT"/>
-                <outlet property="imageContainerView" destination="fs3-VG-bAC" id="OWf-1y-DPI"/>
+                <outlet property="heightImageViewContainerContstraint" destination="HsL-OS-cl8" id="lv6-W1-OvK"/>
+                <outlet property="imageContainerView" destination="fs3-VG-bAC" id="Ue9-WO-BeV"/>
                 <outlet property="locationLabel" destination="iyG-GR-O2R" id="xT0-ul-IbP"/>
                 <outlet property="tagLabel" destination="2Zm-iI-xLW" id="B2f-40-RaU"/>
             </connections>
-            <point key="canvasLocation" x="34" y="219"/>
+            <point key="canvasLocation" x="36" y="197"/>
         </tableViewCell>
     </objects>
     <resources>

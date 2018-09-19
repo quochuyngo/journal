@@ -16,9 +16,15 @@
 		5A4899C1214620A200970EF0 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4899C0214620A200970EF0 /* DBManager.swift */; };
 		5A4899C3214E181600970EF0 /* NewJournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4899C2214E181600970EF0 /* NewJournalViewModel.swift */; };
 		5A4899C52150AE5000970EF0 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4899C42150AE5000970EF0 /* Array+Ext.swift */; };
+		5A4899C72150C0BB00970EF0 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4899C62150C0BB00970EF0 /* TagViewController.swift */; };
+		5A4899C92150FF6100970EF0 /* TagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4899C82150FF6100970EF0 /* TagViewModel.swift */; };
+		5A4899CB215102DF00970EF0 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4899CA215102DF00970EF0 /* TagCell.swift */; };
+		5A4899CE21525F8F00970EF0 /* JournalPlainTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4899CC21525F8E00970EF0 /* JournalPlainTextCell.swift */; };
+		5A4899CF21525F8F00970EF0 /* JournalPlainTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A4899CD21525F8F00970EF0 /* JournalPlainTextCell.xib */; };
+		5A4899D12152607800970EF0 /* JournalMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4899D02152607800970EF0 /* JournalMediaCell.swift */; };
 		5A553A13208DCC8000820737 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A553A12208DCC8000820737 /* TimelineViewController.swift */; };
 		5A553A17208E3BA100820737 /* JournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A553A15208E3BA100820737 /* JournalCell.swift */; };
-		5A553A18208E3BA100820737 /* JournalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A553A16208E3BA100820737 /* JournalCell.xib */; };
+		5A553A18208E3BA100820737 /* JournalMediaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A553A16208E3BA100820737 /* JournalMediaCell.xib */; };
 		5A553A1A208F256E00820737 /* PostImageView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A553A19208F256E00820737 /* PostImageView1.xib */; };
 		5A7BDF5B209DA65B008CAA3F /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF5A209DA65A008CAA3F /* EmotionViewController.swift */; };
 		5A7BDF5D209DA862008CAA3F /* EmotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF5C209DA862008CAA3F /* EmotionCell.swift */; };
@@ -86,9 +92,15 @@
 		5A4899C0214620A200970EF0 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		5A4899C2214E181600970EF0 /* NewJournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJournalViewModel.swift; sourceTree = "<group>"; };
 		5A4899C42150AE5000970EF0 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		5A4899C62150C0BB00970EF0 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
+		5A4899C82150FF6100970EF0 /* TagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewModel.swift; sourceTree = "<group>"; };
+		5A4899CA215102DF00970EF0 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
+		5A4899CC21525F8E00970EF0 /* JournalPlainTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalPlainTextCell.swift; sourceTree = "<group>"; };
+		5A4899CD21525F8F00970EF0 /* JournalPlainTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalPlainTextCell.xib; sourceTree = "<group>"; };
+		5A4899D02152607800970EF0 /* JournalMediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalMediaCell.swift; sourceTree = "<group>"; };
 		5A553A12208DCC8000820737 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		5A553A15208E3BA100820737 /* JournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCell.swift; sourceTree = "<group>"; };
-		5A553A16208E3BA100820737 /* JournalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalCell.xib; sourceTree = "<group>"; };
+		5A553A16208E3BA100820737 /* JournalMediaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalMediaCell.xib; sourceTree = "<group>"; };
 		5A553A19208F256E00820737 /* PostImageView1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostImageView1.xib; sourceTree = "<group>"; };
 		5A7BDF5A209DA65A008CAA3F /* EmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
 		5A7BDF5C209DA862008CAA3F /* EmotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCell.swift; sourceTree = "<group>"; };
@@ -199,13 +211,16 @@
 			isa = PBXGroup;
 			children = (
 				5A553A15208E3BA100820737 /* JournalCell.swift */,
-				5A553A16208E3BA100820737 /* JournalCell.xib */,
 				5A553A19208F256E00820737 /* PostImageView1.xib */,
 				5AFCA7F4208F76BA005D3C39 /* PostImageView1.swift */,
 				5AFCA7F2208F7469005D3C39 /* PostImageView2.xib */,
 				5AFCA7F6208F77F3005D3C39 /* PostImageView2.swift */,
 				5AFCA7F820906195005D3C39 /* PostImageView3.xib */,
 				5AFCA7FA209062FC005D3C39 /* PostImageView3.swift */,
+				5A4899CC21525F8E00970EF0 /* JournalPlainTextCell.swift */,
+				5A4899CD21525F8F00970EF0 /* JournalPlainTextCell.xib */,
+				5A4899D02152607800970EF0 /* JournalMediaCell.swift */,
+				5A553A16208E3BA100820737 /* JournalMediaCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,6 +233,7 @@
 				5A7BDF5A209DA65A008CAA3F /* EmotionViewController.swift */,
 				5A7BDF61209DB87E008CAA3F /* PlaceViewController.swift */,
 				5A7BDF68209DC345008CAA3F /* PhotoViewController.swift */,
+				5A4899C62150C0BB00970EF0 /* TagViewController.swift */,
 			);
 			path = AddingItem;
 			sourceTree = "<group>";
@@ -260,6 +276,7 @@
 				5A7BDF6A209F1297008CAA3F /* PhotoCell.swift */,
 				5A7BDF5C209DA862008CAA3F /* EmotionCell.swift */,
 				5AD07B99213BDD7900C6F138 /* PlaceCell.swift */,
+				5A4899CA215102DF00970EF0 /* TagCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -329,6 +346,7 @@
 			children = (
 				5AD07B9E213C3E8700C6F138 /* PlaceViewModel.swift */,
 				5A4899C2214E181600970EF0 /* NewJournalViewModel.swift */,
+				5A4899C82150FF6100970EF0 /* TagViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -486,8 +504,9 @@
 				5AA34F292086EF7B00E50B2B /* Assets.xcassets in Resources */,
 				5AA34F272086EF7B00E50B2B /* Main.storyboard in Resources */,
 				5AFCA7F3208F7469005D3C39 /* PostImageView2.xib in Resources */,
+				5A4899CF21525F8F00970EF0 /* JournalPlainTextCell.xib in Resources */,
 				5A553A1A208F256E00820737 /* PostImageView1.xib in Resources */,
-				5A553A18208E3BA100820737 /* JournalCell.xib in Resources */,
+				5A553A18208E3BA100820737 /* JournalMediaCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,10 +664,13 @@
 				5A7BDF6F20A410EB008CAA3F /* AddingCell.swift in Sources */,
 				5A7BDF62209DB87E008CAA3F /* PlaceViewController.swift in Sources */,
 				5A7BDF67209DBE64008CAA3F /* UIColor+Ext.swift in Sources */,
+				5A4899D12152607800970EF0 /* JournalMediaCell.swift in Sources */,
 				5A7BDF7520A5F7B5008CAA3F /* ImageStore.swift in Sources */,
 				5AFCA7FF20907270005D3C39 /* CustomTabBar.swift in Sources */,
+				5A4899CB215102DF00970EF0 /* TagCell.swift in Sources */,
 				5A7BDF7920A81B04008CAA3F /* EmojiItem.swift in Sources */,
 				5AA34F222086EF7B00E50B2B /* AppDelegate.swift in Sources */,
+				5A4899C92150FF6100970EF0 /* TagViewModel.swift in Sources */,
 				5A4899BF2145877C00970EF0 /* TimelineViewModel.swift in Sources */,
 				5AFCA7F7208F77F3005D3C39 /* PostImageView2.swift in Sources */,
 				5A553A13208DCC8000820737 /* TimelineViewController.swift in Sources */,
@@ -656,8 +678,10 @@
 				5AFCA80220907AE1005D3C39 /* NewJournalViewController.swift in Sources */,
 				5A4899BD21452DD000970EF0 /* ActionSheetManager.swift in Sources */,
 				5A7BDF6B209F1297008CAA3F /* PhotoCell.swift in Sources */,
+				5A4899CE21525F8F00970EF0 /* JournalPlainTextCell.swift in Sources */,
 				5A7BDF64209DBCAB008CAA3F /* CustomNavigationController.swift in Sources */,
 				5A7BDF69209DC345008CAA3F /* PhotoViewController.swift in Sources */,
+				5A4899C72150C0BB00970EF0 /* TagViewController.swift in Sources */,
 				5AB64F3A209778FE00ACD157 /* AddingItemViewController.swift in Sources */,
 				5A7BDF7720A6F821008CAA3F /* AddingItem.swift in Sources */,
 			);

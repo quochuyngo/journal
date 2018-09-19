@@ -36,7 +36,8 @@ class TimelineViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.contentInset = UIEdgeInsetsMake(5, 0, 5, 0)
-        tableView.register(UINib(nibName: String(describing: JournalCell.self), bundle: nil), forCellReuseIdentifier: String(describing: JournalCell.self))
+        tableView.register(UINib(nibName: String(describing: JournalMediaCell.self), bundle: nil), forCellReuseIdentifier: String(describing: JournalMediaCell.self))
+        tableView.register(UINib(nibName: String(describing: JournalPlainTextCell.self), bundle: nil), forCellReuseIdentifier: String(describing: JournalPlainTextCell.self))
     }
 
 
@@ -83,8 +84,14 @@ extension TimelineViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: JournalCell.self), for: indexPath) as! JournalCell
-        cell.configCell(with: viewModel.journalList[indexPath.row])
+        let journal = viewModel.journalList[indexPath.row]
+        var cell = JournalCell()
+        if journal.imagesName.count > 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: String(describing: JournalMediaCell.self), for: indexPath) as! JournalMediaCell
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: String(describing: JournalPlainTextCell.self),  for: indexPath) as! JournalPlainTextCell
+        }
+        cell.configCell(with: journal)
         cell.delegate = self
         return cell
     }

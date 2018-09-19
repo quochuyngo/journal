@@ -9,11 +9,15 @@ import RealmSwift
 
 class TimelineViewModel {
     var journalList: [Journal] {
-        return DBManager.default.getListJournal()
+        return sortByDate(DBManager.default.getListJournal())
     }
     var selectedJournal: Journal?
     
     init() {
+    }
+    
+    func sortByDate(_ journals: [Journal]) -> [Journal] {
+        return journals.sorted { $0.datetimeEdited! > $1.datetimeEdited! }
     }
     
     func add(_ journal: Journal) {

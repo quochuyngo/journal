@@ -21,23 +21,8 @@ class NewJournalViewModel {
         DBManager.default.add(journal)
     }
     
-    func edit() {
-        guard let journal = editJournal else { return }
-        var newPhotos = [String]()
-        newPhotosAdded.forEach {
-            let name = StorageManager.getNameFor(image: $0)
-            StorageManager.save($0, with: name)
-            newPhotos.append(name)
-        }
-        
-        photosRemoved.forEach {
-            StorageManager.removeImage(with: $0)
-        }
-        
-        let finalListPhotos =  ((photosRemoved.count == 0) ? journal.imagesName.toArray() : photosArrayAfterRemoved(photosOrigin: journal.imagesName.toArray(), photosRemoved: photosRemoved)) + newPhotos
-        
-        tempJournal.imagesName = finalListPhotos.toList()
-        tempJournal.id = journal.id
+    func update() {
+        updateJournal()
         DBManager.default.update(tempJournal)
     }
     
@@ -53,8 +38,41 @@ class NewJournalViewModel {
     }
     
     
+    private func updateJournal() {
+        guard let editJournal = editJournal else { return }
+        
+        var newPhotos = [String]()
+        newPhotosAdded.forEach {
+            let name = StorageManager.getNameFor(image: $0)
+            StorageManager.save($0, with: name)
+            newPhotos.append(name)
+        }
+        
+        photosRemoved.forEach {
+            StorageManager.removeImage(with: $0)
+        }
+        
+        let finalListPhotos =  ((photosRemoved.count == 0) ? editJournal.imagesName.toArray() : photosArrayAfterRemoved(photosOrigin: editJournal.imagesName.toArray(), photosRemoved: photosRemoved)) + newPhotos
+        
+        tempJournal.id = editJournal.id
+        tempJournal.imagesName = finalListPhotos.toList()
+        tempJournal.datetimeEdited = editJournal.datetimeEdited
+        
+        
+        if tempJournal.emotion == nil {
+            tempJournal.emotion = editJournal.emotion
+        }
+        
+        if tempJournal.location == nil {
+            tempJournal.location = editJournal.location
+        }
+        
+        if tempJournal.tags.count == 0 {
+            tempJournal.tags = editJournal.tags
+        }
+    }
     //handle add new images edited post
-    func photosArrayAfterRemoved(photosOrigin: [String], photosRemoved: [String]) -> [String] {
+    private func photosArrayAfterRemoved(photosOrigin: [String], photosRemoved: [String]) -> [String] {
        var newList = [String]()
         for i in 0..<photosOrigin.count {
             photosRemoved.forEach {

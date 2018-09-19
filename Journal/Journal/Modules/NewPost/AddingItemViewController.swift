@@ -14,6 +14,7 @@ protocol AddingItemViewControllerDelegate: class {
     func photosDidSelect(_ assets: [PHAsset])
     func emojiDidSelect(_ emoji: EmojiItem)
     func placeDidSelect(_ place: Place)
+    func tagsDidAdd(_ tags: [String])
 }
 
 class AddingItemViewController: UIViewController {
@@ -129,6 +130,12 @@ extension AddingItemViewController: UICollectionViewDelegateFlowLayout {
             }
             break
         case .tag:
+            let nav = StoryboardManager.Main.getTagVC()
+            if let vc = nav.viewControllers.first as? TagViewController {
+                vc.delegate = self
+                vc.viewModel.journal = journal
+                present(nav, animated: true, completion: nil)
+            }
             break
         case .photo:
             addPhoto()
@@ -152,5 +159,11 @@ extension AddingItemViewController: EmotionViewControllerDelegate {
 extension AddingItemViewController: PlaceViewControllerDelegate {
     func didSelectPlace(_ place: Place) {
         delegate?.placeDidSelect(place)
+    }
+}
+
+extension AddingItemViewController: TagViewControllerDelegate {
+    func didAdd(_ tags: [String]) {
+        delegate?.tagsDidAdd(tags)
     }
 }

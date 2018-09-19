@@ -18,9 +18,7 @@ class JournalCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var emotionImageView: UIImageView!
-    @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var bgView: UIView!
-    @IBOutlet weak var heightImageViewContainerContstraint: NSLayoutConstraint!
     
     weak var delegate: JournalCellDelegate?
     
@@ -28,25 +26,17 @@ class JournalCell: UITableViewCell {
     
     func configCell(with journal: Journal) {
         self.journal = journal
-        imageContainerView.subviews.forEach {
-            $0.removeFromSuperview()
-        }
         contentLabel.text = journal.content
-        if journal.photos.count > 0 {
-            let view = PostImageView1.initFromNib()
-            imageContainerView.addSubview(view)
-            view.snp.makeConstraints { make -> Void in
-                make.edges.equalToSuperview()
-            }
-            view.imageView.image = journal.photos.first
-            heightImageViewContainerContstraint.constant = 190
-        } else {
-            heightImageViewContainerContstraint.constant = 0
-        }
         locationLabel.text = journal.location?.title
         if let emoji = journal.emotion {
             emotionImageView.image = UIImage(named: emoji.icon)
         }
+        
+        var tagsText = ""
+        journal.tags.forEach {
+            tagsText += "#\($0) "
+        }
+        tagLabel.text = tagsText
     }
     
     override func awakeFromNib() {
@@ -66,20 +56,3 @@ class JournalCell: UITableViewCell {
     }
     
 }
-
-//            } else {
-//                if data == 3 {
-//                    let view = PostImageView3.initFromNib()
-//                    imageContainerView.addSubview(view)
-//                    view.snp.makeConstraints { make -> Void in
-//                        make.edges.equalToSuperview()
-//                    }
-//                } else {
-//                    let view = PostImageView2.initFromNib()
-//                    imageContainerView.addSubview(view)
-//                    view.snp.makeConstraints { make -> Void in
-//                        make.edges.equalToSuperview()
-//                    }
-//                }
-//
-//            }

@@ -27,5 +27,9 @@ class StoryboardManager {
         static func getPlaceVC() -> UINavigationController {
             return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: "PlaceNavigationVC")) as! UINavigationController
         }
+    
+        static func getTagVC() -> UINavigationController {
+            return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: "TagNavigationVC")) as! UINavigationController
+        }
     }
 }

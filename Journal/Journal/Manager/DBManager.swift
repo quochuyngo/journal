@@ -14,7 +14,7 @@ class DBManager {
     
     func getListJournal() -> [Journal] {
         let journalList = realm.objects(Journal.self)
-        return Array(journalList).reversed()
+        return Array(journalList)
     }
     
     func add(_ journal: Journal) {

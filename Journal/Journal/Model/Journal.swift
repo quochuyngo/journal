@@ -28,11 +28,12 @@ class Journal: Object {
         return "id"
     }
     
-    convenience init(content: String, location: Place?, emotion: EmojiItem, photos: [UIImage]?) {
+    convenience init(content: String, location: Place?, emotion: EmojiItem, tags: List<String>, photos: [UIImage]?) {
         self.init()
         self.content = content
         self.location = location
         self.emotion = emotion
+        self.tags = tags
         if let photos  = photos {
             setName(for: photos)
         }

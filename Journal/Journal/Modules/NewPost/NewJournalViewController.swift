@@ -66,14 +66,16 @@ class NewJournalViewController: UIViewController {
     }
 
     @IBAction func onPost(_ sender: UIBarButtonItem) {
+        let tempJournal = viewModel.tempJournal
         if let _ = viewModel.editJournal {
-            viewModel.tempJournal.content = textView.text
-            viewModel.edit()
+            tempJournal.content = textView.text
+            viewModel.update()
  
         } else {
-            
-            if let emoji = viewModel.tempJournal.emotion {
-                let journal = Journal(content: textView.text, location: viewModel.tempJournal.location, emotion: emoji, photos: viewModel.photos)
+            if let emoji = viewModel.tempJournal.emotion
+                 {
+                
+                let journal = Journal(content: textView.text, location: tempJournal.location, emotion: emoji, tags: tempJournal.tags, photos: viewModel.photos)
                 viewModel.create(journal)
             } else {
                 let alert = AlertManager.getAlert(withType: .create, handler: nil)
@@ -139,6 +141,10 @@ extension NewJournalViewController: AddingItemViewControllerDelegate {
     
     func placeDidSelect(_ place: Place) {
         viewModel.tempJournal.location = place
+    }
+    
+    func tagsDidAdd(_ tags: [String]) {
+        viewModel.tempJournal.tags = tags.toList()
     }
 }
 
