@@ -15,6 +15,7 @@ target 'Journal' do
   pod 'KMPlaceholderTextView'
   pod 'IQKeyboardManagerSwift'
   pod 'NYTPhotoViewer'
+  pod 'Agrume'
   target 'JournalTests' do
     inherit! :search_paths
     # Pods for testing

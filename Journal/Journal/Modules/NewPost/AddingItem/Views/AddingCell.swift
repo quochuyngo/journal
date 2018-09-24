@@ -17,11 +17,11 @@ class AddingCell: UICollectionViewCell {
         didSet {
             guard let item = item else { return }
             iconImageView.image = UIImage(named: item.icon)
+            
         }
     }
     override func awakeFromNib() {
         titleLabel.isHidden = true
-        
     }
     
     

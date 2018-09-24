@@ -43,6 +43,7 @@ class CustomTabBar: UITabBar {
         centerButton.addTarget(self, action: #selector(test), for: .touchUpInside)
         centerButton.setImage(UIImage(named: "ic_new_post"), for: .normal)
         centerButton.setBackgroundImage(UIImage(named: "ic_new_post"), for: .normal)
+        
         addSubview(centerButton)
         backgroundColor = .white
     }

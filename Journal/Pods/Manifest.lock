@@ -1,4 +1,6 @@
 PODS:
+  - Agrume (5.1.0):
+    - SwiftyGif
   - BSGridCollectionViewLayout (1.2.0)
   - BSImagePicker (2.7.1):
     - BSGridCollectionViewLayout (~> 1.2.0)
@@ -28,9 +30,11 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
   - SnapKit (4.0.0)
+  - SwiftyGif (4.1.0)
   - UIImageViewModeScaleAspect (1.5)
 
 DEPENDENCIES:
+  - Agrume
   - BSImagePicker (~> 2.4)
   - GooglePlaces
   - IQKeyboardManagerSwift
@@ -43,6 +47,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Agrume
     - BSGridCollectionViewLayout
     - BSImagePicker
     - FLAnimatedImage
@@ -57,9 +62,11 @@ SPEC REPOS:
     - RxRealm
     - RxSwift
     - SnapKit
+    - SwiftyGif
     - UIImageViewModeScaleAspect
 
 SPEC CHECKSUMS:
+  Agrume: 97f80b07ddfb2e86fd678e2acd6d71022e045849
   BSGridCollectionViewLayout: 8f12c8e1e08c47057f5a39a6828f4395f043d78f
   BSImagePicker: eb12948a6e71b9855c2c37723dfd989b9b4288bd
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
@@ -74,8 +81,9 @@ SPEC CHECKSUMS:
   RxRealm: a6c6c0a07cb61f34209969ca6657734edfdfff30
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftyGif: d36c6dfb52e2ca1e48fe349d225f50ec4123ec85
   UIImageViewModeScaleAspect: 11a790a0b9d248a13dc63e3a78991f1463b6d84e
 
-PODFILE CHECKSUM: 406f07416130ce858ad308df91862c12710e752b
+PODFILE CHECKSUM: ca419bb8af6a838fe6fea0fa9ae97f0255d12a73
 
 COCOAPODS: 1.5.2

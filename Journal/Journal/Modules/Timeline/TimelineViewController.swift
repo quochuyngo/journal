@@ -9,7 +9,7 @@
 import UIKit
 import GooglePlaces
 import RealmSwift
-import NYTPhotoViewer
+import Agrume
 
 class TimelineViewController: UIViewController {
 
@@ -122,40 +122,10 @@ extension TimelineViewController: JournalCellDelegate {
     
     func photoDidTapAt(_ index: Int) {
         viewModel.selectedIndex = index
-        let photoViewer: NYTPhotosViewController = {
-            return NYTPhotosViewController(dataSource: self)
-        }()
-        photoViewer.rightBarButtonItem = nil
-        photoViewer.delegate = self
-        present(photoViewer, animated: true, completion: nil)
-    }
-}
-
-extension TimelineViewController: NYTPhotosViewControllerDelegate {
-    
-}
-
-extension TimelineViewController: NYTPhotoViewerDataSource {
-    var numberOfPhotos: NSNumber? {
-        return viewModel.photos.count as NSNumber
-    }
-    
-    func index(of photo: NYTPhoto) -> Int {
-        for i in 0..<viewModel.photos.count {
-            if viewModel.photos[i].image == photo.image {
-                return i
-            }
-        }
         
-        return 0
+        let barButton = UIBarButtonItem(image:  UIImage(named: "ic_cancel_x"), style: .plain, target: self, action: nil)
+        barButton.tintColor = UIColor.white
+        let agrume = Agrume(images: viewModel.journalList[index].photos, startIndex: 0, background: .colored(UIColor(red: 0, green: 0, blue: 0, alpha: 0.96)), dismissal: .withButton(barButton))
+        agrume.show(from: self)
     }
-    
-    func photo(at photoIndex: Int) -> NYTPhoto? {
-        if photoIndex >= viewModel.photos.count {
-            return nil
-        }
-        return viewModel.photos[photoIndex]
-    }
-    
-    
 }
