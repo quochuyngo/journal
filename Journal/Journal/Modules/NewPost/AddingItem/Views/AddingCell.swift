@@ -16,8 +16,8 @@ class AddingCell: UICollectionViewCell {
     var item: AddingItem? {
         didSet {
             guard let item = item else { return }
-            iconImageView.image = UIImage(named: item.icon)
-            
+            iconImageView.image = item.isSelected ? UIImage(named: item.icon)?.withRenderingMode(.alwaysTemplate) : UIImage(named: item.icon)
+            iconImageView.tintColor = UIColor.mainColor()
         }
     }
     override func awakeFromNib() {
