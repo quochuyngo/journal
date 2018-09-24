@@ -70,20 +70,20 @@ class NewJournalViewController: UIViewController {
         if let _ = viewModel.editJournal {
             tempJournal.content = textView.text
             viewModel.update()
- 
+            delegate?.didAddJournal(nil)
+            dismiss(animated: true, completion: nil)
         } else {
-            if let emoji = viewModel.tempJournal.emotion
+            if let emoji = viewModel.tempJournal.emotion, !textView.text.isEmpty
                  {
-                
                 let journal = Journal(content: textView.text, location: tempJournal.location, emotion: emoji, tags: tempJournal.tags, photos: viewModel.photos)
                 viewModel.create(journal)
+                delegate?.didAddJournal(nil)
+                dismiss(animated: true, completion: nil)
             } else {
-                let alert = AlertManager.getAlert(withType: .create, handler: nil)
+                let alert = AlertManager.getAlert(withType: .create(AlertTitle.createJournal.content), handler: nil)
                 present(alert, animated: true, completion: nil)
             }
         }
-        delegate?.didAddJournal(nil)
-        dismiss(animated: true, completion: nil)
     }
     @IBAction func onCancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)

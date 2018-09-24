@@ -26,6 +26,7 @@
 		5A553A17208E3BA100820737 /* JournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A553A15208E3BA100820737 /* JournalCell.swift */; };
 		5A553A18208E3BA100820737 /* JournalMediaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A553A16208E3BA100820737 /* JournalMediaCell.xib */; };
 		5A553A1A208F256E00820737 /* PostImageView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A553A19208F256E00820737 /* PostImageView1.xib */; };
+		5A55F2AD21535BB500CCC23E /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A55F2AC21535BB500CCC23E /* AlertManager.swift */; };
 		5A7BDF5B209DA65B008CAA3F /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF5A209DA65A008CAA3F /* EmotionViewController.swift */; };
 		5A7BDF5D209DA862008CAA3F /* EmotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF5C209DA862008CAA3F /* EmotionCell.swift */; };
 		5A7BDF60209DAF82008CAA3F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF5F209DAF82008CAA3F /* Constants.swift */; };
@@ -102,6 +103,7 @@
 		5A553A15208E3BA100820737 /* JournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCell.swift; sourceTree = "<group>"; };
 		5A553A16208E3BA100820737 /* JournalMediaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalMediaCell.xib; sourceTree = "<group>"; };
 		5A553A19208F256E00820737 /* PostImageView1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostImageView1.xib; sourceTree = "<group>"; };
+		5A55F2AC21535BB500CCC23E /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		5A7BDF5A209DA65A008CAA3F /* EmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
 		5A7BDF5C209DA862008CAA3F /* EmotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCell.swift; sourceTree = "<group>"; };
 		5A7BDF5F209DAF82008CAA3F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -345,7 +347,6 @@
 			isa = PBXGroup;
 			children = (
 				5AD07B9E213C3E8700C6F138 /* PlaceViewModel.swift */,
-				5A4899C2214E181600970EF0 /* NewJournalViewModel.swift */,
 				5A4899C82150FF6100970EF0 /* TagViewModel.swift */,
 			);
 			path = ViewModels;
@@ -356,6 +357,7 @@
 			children = (
 				5A7BDF59209DA61E008CAA3F /* AddingItem */,
 				5AFCA80120907AE1005D3C39 /* NewJournalViewController.swift */,
+				5A4899C2214E181600970EF0 /* NewJournalViewModel.swift */,
 				5AB64F39209778FE00ACD157 /* AddingItemViewController.swift */,
 			);
 			path = NewPost;
@@ -368,6 +370,7 @@
 				5A06EEB0213D8EB00098BD07 /* StorageManager.swift */,
 				5A4899BC21452DD000970EF0 /* ActionSheetManager.swift */,
 				5A4899C0214620A200970EF0 /* DBManager.swift */,
+				5A55F2AC21535BB500CCC23E /* AlertManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -608,8 +611,10 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Journal/Pods-Journal-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BSGridCollectionViewLayout/BSGridCollectionViewLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/BSImagePicker/BSImagePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
+				"${BUILT_PRODUCTS_DIR}/NYTPhotoViewer/NYTPhotoViewer.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -622,8 +627,10 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSGridCollectionViewLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImagePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NYTPhotoViewer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -678,6 +685,7 @@
 				5AFCA80220907AE1005D3C39 /* NewJournalViewController.swift in Sources */,
 				5A4899BD21452DD000970EF0 /* ActionSheetManager.swift in Sources */,
 				5A7BDF6B209F1297008CAA3F /* PhotoCell.swift in Sources */,
+				5A55F2AD21535BB500CCC23E /* AlertManager.swift in Sources */,
 				5A4899CE21525F8F00970EF0 /* JournalPlainTextCell.swift in Sources */,
 				5A7BDF64209DBCAB008CAA3F /* CustomNavigationController.swift in Sources */,
 				5A7BDF69209DC345008CAA3F /* PhotoViewController.swift in Sources */,
@@ -850,6 +858,7 @@
 			baseConfigurationReference = 7A93D52110B46D4CBF0CA8BF /* Pods-Journal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 589Z4L567V;
 				INFOPLIST_FILE = Journal/Info.plist;
@@ -857,6 +866,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huyngo.Journal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -867,6 +877,7 @@
 			baseConfigurationReference = A02EE88B66771813AA1287B8 /* Pods-Journal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 589Z4L567V;
 				INFOPLIST_FILE = Journal/Info.plist;
@@ -874,6 +885,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huyngo.Journal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

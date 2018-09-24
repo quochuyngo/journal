@@ -31,7 +31,9 @@ class DBManager {
     
     func update(_ journal: Journal) {
         try! realm.write {
+            //realm.create(Journal.self, value: journal, update: true)
             realm.add(journal, update: true)
+            try! realm.commitWrite()
         }
     }
     

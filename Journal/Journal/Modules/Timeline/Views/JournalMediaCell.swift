@@ -22,9 +22,9 @@ class JournalMediaCell: JournalCell {
         // Configure the view for the selected state
     }
     
-    override func configCell(with journal: Journal) {
-        super.configCell(with: journal)
-        
+    override func configCell(at index: Int, with journal: Journal) {
+        super.configCell(at: index, with: journal)
+        self.index = index
         imageContainerView.subviews.forEach {
             $0.removeFromSuperview()
         }
@@ -35,8 +35,16 @@ class JournalMediaCell: JournalCell {
             make.edges.equalToSuperview()
         }
         view.imageView.image = journal.photos.first
+     
+        //Add gestuer
+        let tapGestuer = UITapGestureRecognizer(target: self, action: #selector(didTapImage(_:)))
+        view.imageView.addGestureRecognizer(tapGestuer)
+        view.imageView.isUserInteractionEnabled = true
     }
 
+    @objc func didTapImage(_ sender: UITapGestureRecognizer) {
+        delegate?.photoDidTapAt(index)
+    }
 }
 
 //            } else {

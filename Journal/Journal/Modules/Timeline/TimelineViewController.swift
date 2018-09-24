@@ -9,12 +9,15 @@
 import UIKit
 import GooglePlaces
 import RealmSwift
+import NYTPhotoViewer
 
 class TimelineViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     lazy var locationManager: CLLocationManager = CLLocationManager()
+    
     let viewModel: TimelineViewModel = TimelineViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.requestWhenInUseAuthorization()
@@ -91,7 +94,7 @@ extension TimelineViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: String(describing: JournalPlainTextCell.self),  for: indexPath) as! JournalPlainTextCell
         }
-        cell.configCell(with: journal)
+        cell.configCell(at: indexPath.row, with: journal)
         cell.delegate = self
         return cell
     }
@@ -116,4 +119,43 @@ extension TimelineViewController: JournalCellDelegate {
     func moreButtonDidTap(_ journal: Journal) {
         present(ActionSheetManager.getActionSheet(withType: .more, journal), animated: true, completion: nil)
     }
+    
+    func photoDidTapAt(_ index: Int) {
+        viewModel.selectedIndex = index
+        let photoViewer: NYTPhotosViewController = {
+            return NYTPhotosViewController(dataSource: self)
+        }()
+        photoViewer.rightBarButtonItem = nil
+        photoViewer.delegate = self
+        present(photoViewer, animated: true, completion: nil)
+    }
+}
+
+extension TimelineViewController: NYTPhotosViewControllerDelegate {
+    
+}
+
+extension TimelineViewController: NYTPhotoViewerDataSource {
+    var numberOfPhotos: NSNumber? {
+        return viewModel.photos.count as NSNumber
+    }
+    
+    func index(of photo: NYTPhoto) -> Int {
+        for i in 0..<viewModel.photos.count {
+            if viewModel.photos[i].image == photo.image {
+                return i
+            }
+        }
+        
+        return 0
+    }
+    
+    func photo(at photoIndex: Int) -> NYTPhoto? {
+        if photoIndex >= viewModel.photos.count {
+            return nil
+        }
+        return viewModel.photos[photoIndex]
+    }
+    
+    
 }

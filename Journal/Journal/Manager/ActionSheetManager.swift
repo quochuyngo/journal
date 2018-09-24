@@ -19,15 +19,6 @@ enum ActionSheetType {
     case delete
 }
 
-enum AlertResult {
-    case cancel
-    case yes
-}
-
-enum AlertJournalType {
-    case delete
-    case create
-}
 class ActionSheetManager {
     
     static var actionDidSelect: ((_ action: MoreOptions) -> Void)?
@@ -46,11 +37,11 @@ class ActionSheetManager {
         
         actionSheet.addAction(UIAlertAction(title:"Cancel", style:.cancel))
         
-        actionSheet.addAction(UIAlertAction(title: "Share on Facebook", style: .default, handler: {
-            _ in
-            self.actionDidSelect?(.shareFaceBook(journal))
-            
-        }))
+//        actionSheet.addAction(UIAlertAction(title: "Share on Facebook", style: .default, handler: {
+//            _ in
+//            self.actionDidSelect?(.shareFaceBook(journal))
+//            
+//        }))
         
         let editAction = UIAlertAction(title: "Edit", style: .default, handler: {
             _ in
@@ -71,34 +62,5 @@ class ActionSheetManager {
     fileprivate class func getDeleteActionSheet(_ journal: Journal) -> UIAlertController {
          let actionSheet = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
         return actionSheet
-    }
-}
-
-class AlertManager {
-    
-    static func getAlert(withType type: AlertJournalType, handler: ((AlertResult) -> Void)?) -> UIAlertController {
-        switch type {
-        case .delete:
-            return AlertManager.getDeleteAlert(with: handler!)
-        case .create:
-            return AlertManager.getCreatPostAlert()
-        }
-        
-    }
-    
-    fileprivate static func getDeleteAlert(with handler: @escaping ((AlertResult) -> Void)) -> UIAlertController {
-        let alert = UIAlertController(title: "Delete post?", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
-            _ in
-            handler(.yes)
-        }))
-        return alert
-    }
-    
-    fileprivate static func getCreatPostAlert() -> UIAlertController {
-        let alert = UIAlertController(title: "Tell us your feeling by select a emoji icon!", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        return alert
     }
 }

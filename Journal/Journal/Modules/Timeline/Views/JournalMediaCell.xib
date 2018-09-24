@@ -37,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fs3-VG-bAC">
-                                <rect key="frame" x="10" y="59" width="280" height="190"/>
+                                <rect key="frame" x="0.0" y="59" width="300" height="190"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="190" id="HsL-OS-cl8"/>
@@ -78,11 +78,11 @@
                             <constraint firstItem="2Zm-iI-xLW" firstAttribute="top" secondItem="n3H-z8-RTb" secondAttribute="bottom" constant="10" id="I4F-yC-1G0"/>
                             <constraint firstItem="OwJ-SJ-cy9" firstAttribute="top" secondItem="l20-gJ-DS8" secondAttribute="top" id="OnK-JQ-hEh"/>
                             <constraint firstItem="l20-gJ-DS8" firstAttribute="leading" secondItem="4Um-9z-LFr" secondAttribute="leading" constant="10" id="PMT-qd-A2R"/>
-                            <constraint firstAttribute="trailing" secondItem="fs3-VG-bAC" secondAttribute="trailing" constant="10" id="QIZ-Vy-tvf"/>
+                            <constraint firstAttribute="trailing" secondItem="fs3-VG-bAC" secondAttribute="trailing" id="QIZ-Vy-tvf"/>
                             <constraint firstItem="n3H-z8-RTb" firstAttribute="top" secondItem="fs3-VG-bAC" secondAttribute="bottom" constant="12" id="TP1-OL-A0L"/>
                             <constraint firstItem="2Zm-iI-xLW" firstAttribute="leading" secondItem="n3H-z8-RTb" secondAttribute="leading" id="Ujk-SW-kNi"/>
                             <constraint firstItem="iyG-GR-O2R" firstAttribute="leading" secondItem="l20-gJ-DS8" secondAttribute="leading" id="XHZ-nD-VYn"/>
-                            <constraint firstItem="fs3-VG-bAC" firstAttribute="leading" secondItem="4Um-9z-LFr" secondAttribute="leading" constant="10" id="ZmR-bb-mUl"/>
+                            <constraint firstItem="fs3-VG-bAC" firstAttribute="leading" secondItem="4Um-9z-LFr" secondAttribute="leading" id="ZmR-bb-mUl"/>
                             <constraint firstItem="l20-gJ-DS8" firstAttribute="top" secondItem="4Um-9z-LFr" secondAttribute="top" constant="10" id="a0p-76-mqy"/>
                             <constraint firstItem="n3H-z8-RTb" firstAttribute="trailing" secondItem="EgL-3w-9ER" secondAttribute="trailing" id="hUP-WZ-JUN"/>
                             <constraint firstAttribute="trailing" secondItem="EgL-3w-9ER" secondAttribute="trailing" id="n8G-Nb-Y1z"/>

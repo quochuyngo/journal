@@ -11,6 +11,7 @@ import SnapKit
 
 protocol JournalCellDelegate: class {
     func moreButtonDidTap(_ atJournal: Journal)
+    func photoDidTapAt(_ index: Int)
 }
 class JournalCell: UITableViewCell {
     
@@ -21,11 +22,12 @@ class JournalCell: UITableViewCell {
     @IBOutlet weak var bgView: UIView!
     
     weak var delegate: JournalCellDelegate?
-    
+    var index: Int!
     var journal: Journal!
     
-    func configCell(with journal: Journal) {
+    func configCell(at index: Int, with journal: Journal) {
         self.journal = journal
+        self.index = index
         contentLabel.text = journal.content
         locationLabel.text = journal.location?.title
         if let emoji = journal.emotion {
@@ -42,7 +44,12 @@ class JournalCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        bgView.layer.cornerRadius = 6
+        bgView.layer.cornerRadius = 4
+        bgView.layer.masksToBounds = false
+        bgView.layer.shadowRadius = 1.5
+        bgView.layer.shadowOpacity = 0.4
+        bgView.layer.shadowOffset = CGSize(width: 0, height: 0.5)
+        bgView.layer.shadowColor = UIColor(red:  121/255, green:  121/255, blue:  121/255, alpha: 1).cgColor
         selectionStyle = .none
     }
     
