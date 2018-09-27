@@ -15,6 +15,8 @@ protocol JournalCellDelegate: class {
 }
 class JournalCell: UITableViewCell {
     
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tagLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -31,9 +33,11 @@ class JournalCell: UITableViewCell {
         contentLabel.text = journal.content
         locationLabel.text = journal.location?.title
         if let emoji = journal.emotion {
-            emotionImageView.image = UIImage(named: emoji.icon)
+            emotionImageView.image = UIImage(named: emoji.icon)?.withRenderingMode(.alwaysTemplate)
+            emotionImageView.tintColor = UIColor.mainColor()
         }
-        
+        dateLabel.text = journal.formatDate()
+        timeLabel.text = journal.formatTime()
         var tagsText = ""
         journal.tags.forEach {
             tagsText += "#\($0) "

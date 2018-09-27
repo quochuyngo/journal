@@ -12,11 +12,13 @@ protocol TagCellDelegate: class {
 }
 class TagCell: UITableViewCell {
 
+    @IBOutlet weak var removeButton: UIButton!
     @IBOutlet weak var tagLabel: UILabel!
     weak var delegate: TagCellDelegate?
     var index: Int?
     override func awakeFromNib() {
         super.awakeFromNib()
+        removeButton.setTitleColor(UIColor.mainColor(), for: .normal)
         // Initialization code
     }
 

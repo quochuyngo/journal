@@ -16,7 +16,7 @@ class TimelineViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     lazy var locationManager: CLLocationManager = CLLocationManager()
     
-    let viewModel: TimelineViewModel = TimelineViewModel()
+    let viewModel: TimelineViewModel = TimelineViewModel(databaseManager: DBManager.default)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +38,19 @@ class TimelineViewController: UIViewController {
         tableView.delegate = self
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.contentInset = UIEdgeInsetsMake(5, 0, 5, 0)
+        tableView.contentInset = UIEdgeInsetsMake(8, 0, 8, 0)
         tableView.register(UINib(nibName: String(describing: JournalMediaCell.self), bundle: nil), forCellReuseIdentifier: String(describing: JournalMediaCell.self))
         tableView.register(UINib(nibName: String(describing: JournalPlainTextCell.self), bundle: nil), forCellReuseIdentifier: String(describing: JournalPlainTextCell.self))
     }
 
 
+    @IBAction func addNewJournal(_ sender: UIButton) {
+        let nav = StoryboardManager.Main.getNewPostVC()
+        if let vc = nav.viewControllers.first as? NewJournalViewController {
+            vc.delegate = self
+        }
+        present(nav, animated: true, completion: nil)
+    }
     
     func handleActionSelected() {
         ActionSheetManager.actionDidSelect = { action in
@@ -98,6 +105,7 @@ extension TimelineViewController: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         return cell
     }
+    
 }
 extension TimelineViewController: CustomBarDelegate {
     func tabBar(_ tabBar: UITabBar, didTapCenterButton: UIButton) {

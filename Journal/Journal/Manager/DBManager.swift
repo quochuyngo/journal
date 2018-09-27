@@ -8,7 +8,9 @@
 
 import RealmSwift
 
-class DBManager {
+protocol BaseDBManager {
+}
+class DBManager: BaseDBManager {
     static var `default` = DBManager()
     var realm = try! Realm(configuration: DBManager.configDB())
     
