@@ -8,7 +8,8 @@
 import RealmSwift
 
 class TimelineViewModel {
-    let databaseManager: DBManager
+    let databaseManager: BaseDBManager
+    
     var journalList: [Journal] {
         return sortByDate(databaseManager.getListJournal())
     }
@@ -17,16 +18,16 @@ class TimelineViewModel {
     var selectedIndex: Int!
     
     
-    init(databaseManager: DBManager) {
+    init(databaseManager: BaseDBManager) {
         self.databaseManager = databaseManager
     }
     
-    private func sortByDate(_ journals: [Journal]) -> [Journal] {
+    func sortByDate(_ journals: [Journal]) -> [Journal] {
         return journals.sorted { $0.datetimeEdited! > $1.datetimeEdited! }
     }
     
     func delete(_ journal: Journal) {
         journal.removeAllImages()
-        DBManager.default.delete(journal)
+        databaseManager.delete(journal)
     }
 }
