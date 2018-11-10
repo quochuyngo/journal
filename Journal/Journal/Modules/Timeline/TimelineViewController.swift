@@ -10,7 +10,7 @@ import UIKit
 import GooglePlaces
 import RealmSwift
 import Agrume
-
+import FirebaseAnalytics
 class TimelineViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -26,7 +26,8 @@ class TimelineViewController: UIViewController {
             customTabBar.customDelegate = self
         }
         handleActionSelected()
-        
+
+        Analytics.setScreenName(String(describing:TimelineViewController.self), screenClass: TimelineViewController.description())
     }
     
     override func didReceiveMemoryWarning() {

@@ -11,6 +11,7 @@ import IQKeyboardManagerSwift
 import GooglePlaces
 import RealmSwift
 import FLEX
+import Firebase
 let googlePlacesKey = "AIzaSyCVO_g1cq7_vniAYiz4aiASFb9os_DMwGI"
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //FLEXManager.shared().showExplorer()
         // Override point for customization after application launch.
         //IQKeyboardManager.sharedManager().enable = true
-        
+        FirebaseApp.configure()
         return true
     }
 

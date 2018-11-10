@@ -17,15 +17,15 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Access to you Photos Library</string>
+	<string>Enable Journal to access your Camera to upload and save your photos taken with app.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Journal stories will based on your location.</string>
+	<string>Your current location will be used for display place on your Journal Post</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Access Photos</string>
+	<string>Enable Journal to access your Photo Library to upload and save your photos choosen with app.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
