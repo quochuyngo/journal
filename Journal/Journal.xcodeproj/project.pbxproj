@@ -27,6 +27,8 @@
 		5A553A18208E3BA100820737 /* JournalMediaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A553A16208E3BA100820737 /* JournalMediaCell.xib */; };
 		5A553A1A208F256E00820737 /* PostImageView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A553A19208F256E00820737 /* PostImageView1.xib */; };
 		5A55BD26215C9470006FC3F8 /* TimeLineViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A55BD25215C9470006FC3F8 /* TimeLineViewModelTest.swift */; };
+		5A55BD29215E27FE006FC3F8 /* PlaceViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A55BD28215E27FE006FC3F8 /* PlaceViewModelTest.swift */; };
+		5A55BD2C215E3291006FC3F8 /* GooglePlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A55BD2B215E3291006FC3F8 /* GooglePlaceService.swift */; };
 		5A55F2AD21535BB500CCC23E /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A55F2AC21535BB500CCC23E /* AlertManager.swift */; };
 		5A7BDF5B209DA65B008CAA3F /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF5A209DA65A008CAA3F /* EmotionViewController.swift */; };
 		5A7BDF5D209DA862008CAA3F /* EmotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF5C209DA862008CAA3F /* EmotionCell.swift */; };
@@ -41,12 +43,13 @@
 		5A7BDF7520A5F7B5008CAA3F /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF7420A5F7B5008CAA3F /* ImageStore.swift */; };
 		5A7BDF7720A6F821008CAA3F /* AddingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF7620A6F821008CAA3F /* AddingItem.swift */; };
 		5A7BDF7920A81B04008CAA3F /* EmojiItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF7820A81B04008CAA3F /* EmojiItem.swift */; };
+		5A99701F21969CF000C8D8C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A99701E21969CF000C8D8C5 /* GoogleService-Info.plist */; };
+		5A9970212196C20C00C8D8C5 /* GoogleFirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9970202196C20C00C8D8C5 /* GoogleFirebaseService.swift */; };
 		5AA34F222086EF7B00E50B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F212086EF7B00E50B2B /* AppDelegate.swift */; };
 		5AA34F242086EF7B00E50B2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F232086EF7B00E50B2B /* ViewController.swift */; };
 		5AA34F272086EF7B00E50B2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA34F252086EF7B00E50B2B /* Main.storyboard */; };
 		5AA34F292086EF7B00E50B2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AA34F282086EF7B00E50B2B /* Assets.xcassets */; };
 		5AA34F2C2086EF7B00E50B2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA34F2A2086EF7B00E50B2B /* LaunchScreen.storyboard */; };
-		5AA34F372086EF7B00E50B2B /* JournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F362086EF7B00E50B2B /* JournalTests.swift */; };
 		5AA34F422086EF7B00E50B2B /* JournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA34F412086EF7B00E50B2B /* JournalUITests.swift */; };
 		5AB64F3A209778FE00ACD157 /* AddingItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB64F39209778FE00ACD157 /* AddingItemViewController.swift */; };
 		5AD07B9A213BDD7900C6F138 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD07B99213BDD7900C6F138 /* PlaceCell.swift */; };
@@ -105,6 +108,8 @@
 		5A553A16208E3BA100820737 /* JournalMediaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalMediaCell.xib; sourceTree = "<group>"; };
 		5A553A19208F256E00820737 /* PostImageView1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostImageView1.xib; sourceTree = "<group>"; };
 		5A55BD25215C9470006FC3F8 /* TimeLineViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewModelTest.swift; sourceTree = "<group>"; };
+		5A55BD28215E27FE006FC3F8 /* PlaceViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewModelTest.swift; sourceTree = "<group>"; };
+		5A55BD2B215E3291006FC3F8 /* GooglePlaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlaceService.swift; sourceTree = "<group>"; };
 		5A55F2AC21535BB500CCC23E /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		5A7BDF5A209DA65A008CAA3F /* EmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
 		5A7BDF5C209DA862008CAA3F /* EmotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCell.swift; sourceTree = "<group>"; };
@@ -119,6 +124,8 @@
 		5A7BDF7420A5F7B5008CAA3F /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		5A7BDF7620A6F821008CAA3F /* AddingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingItem.swift; sourceTree = "<group>"; };
 		5A7BDF7820A81B04008CAA3F /* EmojiItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiItem.swift; sourceTree = "<group>"; };
+		5A99701E21969CF000C8D8C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5A9970202196C20C00C8D8C5 /* GoogleFirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleFirebaseService.swift; sourceTree = "<group>"; };
 		5AA34F1E2086EF7A00E50B2B /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA34F212086EF7B00E50B2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AA34F232086EF7B00E50B2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +134,6 @@
 		5AA34F2B2086EF7B00E50B2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AA34F2D2086EF7B00E50B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AA34F322086EF7B00E50B2B /* JournalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AA34F362086EF7B00E50B2B /* JournalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTests.swift; sourceTree = "<group>"; };
 		5AA34F382086EF7B00E50B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AA34F3D2086EF7B00E50B2B /* JournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA34F412086EF7B00E50B2B /* JournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalUITests.swift; sourceTree = "<group>"; };
@@ -229,12 +235,29 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		5A55BD24215C943A006FC3F8 /* TimeLineTestCases */ = {
+		5A55BD24215C943A006FC3F8 /* TimeLineTests */ = {
 			isa = PBXGroup;
 			children = (
 				5A55BD25215C9470006FC3F8 /* TimeLineViewModelTest.swift */,
 			);
-			path = TimeLineTestCases;
+			path = TimeLineTests;
+			sourceTree = "<group>";
+		};
+		5A55BD27215E27DE006FC3F8 /* AddingItemTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A55BD28215E27FE006FC3F8 /* PlaceViewModelTest.swift */,
+			);
+			path = AddingItemTests;
+			sourceTree = "<group>";
+		};
+		5A55BD2A215E3273006FC3F8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5A55BD2B215E3291006FC3F8 /* GooglePlaceService.swift */,
+				5A9970202196C20C00C8D8C5 /* GoogleFirebaseService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		5A7BDF59209DA61E008CAA3F /* AddingItem */ = {
@@ -270,7 +293,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		5A7BDF7220A45F5D008CAA3F /* Model */ = {
+		5A7BDF7220A45F5D008CAA3F /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				5A7BDF7020A45F53008CAA3F /* Journal.swift */,
@@ -278,7 +301,7 @@
 				5A7BDF7820A81B04008CAA3F /* EmojiItem.swift */,
 				5AD07B9B213BE7CA00C6F138 /* Place.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		5A7BDF7320A46134008CAA3F /* Views */ = {
@@ -318,12 +341,14 @@
 		5AA34F202086EF7B00E50B2B /* Journal */ = {
 			isa = PBXGroup;
 			children = (
-				5A7BDF7220A45F5D008CAA3F /* Model */,
+				5A55BD2A215E3273006FC3F8 /* Services */,
+				5A7BDF7220A45F5D008CAA3F /* Models */,
 				5A7BDF65209DBE4A008CAA3F /* Extensions */,
 				5A7BDF5E209DAF74008CAA3F /* Utils */,
-				5AFCA80320907B36005D3C39 /* Manager */,
+				5AFCA80320907B36005D3C39 /* Managers */,
 				5A553A0E208DCC1700820737 /* Modules */,
 				5AA34F212086EF7B00E50B2B /* AppDelegate.swift */,
+				5A99701E21969CF000C8D8C5 /* GoogleService-Info.plist */,
 				5AA34F232086EF7B00E50B2B /* ViewController.swift */,
 				5AA34F252086EF7B00E50B2B /* Main.storyboard */,
 				5AA34F282086EF7B00E50B2B /* Assets.xcassets */,
@@ -338,8 +363,8 @@
 		5AA34F352086EF7B00E50B2B /* JournalTests */ = {
 			isa = PBXGroup;
 			children = (
-				5A55BD24215C943A006FC3F8 /* TimeLineTestCases */,
-				5AA34F362086EF7B00E50B2B /* JournalTests.swift */,
+				5A55BD27215E27DE006FC3F8 /* AddingItemTests */,
+				5A55BD24215C943A006FC3F8 /* TimeLineTests */,
 				5AA34F382086EF7B00E50B2B /* Info.plist */,
 			);
 			path = JournalTests;
@@ -374,7 +399,7 @@
 			path = NewPost;
 			sourceTree = "<group>";
 		};
-		5AFCA80320907B36005D3C39 /* Manager */ = {
+		5AFCA80320907B36005D3C39 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				5AFCA80420907B49005D3C39 /* StoryboardManager.swift */,
@@ -383,7 +408,7 @@
 				5A4899C0214620A200970EF0 /* DBManager.swift */,
 				5A55F2AC21535BB500CCC23E /* AlertManager.swift */,
 			);
-			path = Manager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		766D4D106250370C83FBA878 /* Frameworks */ = {
@@ -515,6 +540,7 @@
 			files = (
 				5AFCA7F920906195005D3C39 /* PostImageView3.xib in Resources */,
 				5AA34F2C2086EF7B00E50B2B /* LaunchScreen.storyboard in Resources */,
+				5A99701F21969CF000C8D8C5 /* GoogleService-Info.plist in Resources */,
 				5AA34F292086EF7B00E50B2B /* Assets.xcassets in Resources */,
 				5AA34F272086EF7B00E50B2B /* Main.storyboard in Resources */,
 				5AFCA7F3208F7469005D3C39 /* PostImageView2.xib in Resources */,
@@ -625,6 +651,7 @@
 				"${BUILT_PRODUCTS_DIR}/BSImagePicker/BSImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/NYTPhotoViewer/NYTPhotoViewer.framework",
@@ -636,6 +663,7 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 				"${BUILT_PRODUCTS_DIR}/UIImageViewModeScaleAspect/UIImageViewModeScaleAspect.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -644,6 +672,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NYTPhotoViewer.framework",
@@ -655,6 +684,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIImageViewModeScaleAspect.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -675,6 +705,7 @@
 				5AD07B9A213BDD7900C6F138 /* PlaceCell.swift in Sources */,
 				5A4899BB2145203D00970EF0 /* JError.swift in Sources */,
 				5A7BDF5D209DA862008CAA3F /* EmotionCell.swift in Sources */,
+				5A9970212196C20C00C8D8C5 /* GoogleFirebaseService.swift in Sources */,
 				5A4899C52150AE5000970EF0 /* Array+Ext.swift in Sources */,
 				5AFCA7FB209062FC005D3C39 /* PostImageView3.swift in Sources */,
 				5A4899B921451CA400970EF0 /* Reachability.swift in Sources */,
@@ -690,6 +721,7 @@
 				5A7BDF67209DBE64008CAA3F /* UIColor+Ext.swift in Sources */,
 				5A4899D12152607800970EF0 /* JournalMediaCell.swift in Sources */,
 				5A7BDF7520A5F7B5008CAA3F /* ImageStore.swift in Sources */,
+				5A55BD2C215E3291006FC3F8 /* GooglePlaceService.swift in Sources */,
 				5AFCA7FF20907270005D3C39 /* CustomTabBar.swift in Sources */,
 				5A4899CB215102DF00970EF0 /* TagCell.swift in Sources */,
 				5A7BDF7920A81B04008CAA3F /* EmojiItem.swift in Sources */,
@@ -716,7 +748,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AA34F372086EF7B00E50B2B /* JournalTests.swift in Sources */,
+				5A55BD29215E27FE006FC3F8 /* PlaceViewModelTest.swift in Sources */,
 				5A55BD26215C9470006FC3F8 /* TimeLineViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

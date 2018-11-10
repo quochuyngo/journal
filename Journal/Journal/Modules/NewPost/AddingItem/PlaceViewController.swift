@@ -22,7 +22,7 @@ class PlaceViewController: UIViewController {
     @IBOutlet weak var warningLabel: UILabel!
     
     let disposeBag = DisposeBag()
-    let viewModel = PlaceViewModel(placesClient: GMSPlacesClient(), indicator: BehaviorRelay<Bool>(value: false), warningError: BehaviorRelay<Bool>(value: true))
+    let viewModel = PlaceViewModel()
     
     weak var delegate: PlaceViewControllerDelegate?
 
@@ -34,6 +34,7 @@ class PlaceViewController: UIViewController {
             searchBar.text = place.title
         }
         bindingViewModel()
+        
     }
     
     deinit {
@@ -41,16 +42,21 @@ class PlaceViewController: UIViewController {
     }
 
     func bindingViewModel() {
-        let searchResult = searchBar.rx.text.orEmpty
+        let input = PlaceViewModel.Input(searchQuery: searchBar.rx.text.orEmpty
             .throttle(0.3, scheduler: MainScheduler.instance)
-            .distinctUntilChanged()
-            .flatMapLatest { [weak self] query -> Observable<[Place]> in
-                guard let strongSelf = self else { return Observable.just([])}
-                
-                return query.isEmpty ? strongSelf.viewModel.getCurrentPlace() : strongSelf.viewModel.fectchPlaces(withQuery: query)
-            }.observeOn(MainScheduler.instance)
-    
-        searchResult.bind(to: tableView.rx.items(cellIdentifier: "PlaceCell", cellType: PlaceCell.self)) {
+            .distinctUntilChanged())
+        
+        let output = viewModel.transform(input: input)
+        
+        output.searchResult
+            .observeOn(MainScheduler.instance)
+            .catchError { error -> Observable<[Place]> in
+                if let jerror = error as? JError {
+                    self.warningLabel.text = jerror.description()
+                }
+                return Observable.just([])
+            }
+            .bind(to: tableView.rx.items(cellIdentifier: "PlaceCell", cellType: PlaceCell.self)) {
             (index, item, cell) in
             cell.place = item
         }.disposed(by: disposeBag)
@@ -61,14 +67,15 @@ class PlaceViewController: UIViewController {
            self.dismiss(animated: true, completion: nil)
         }).disposed(by: disposeBag)
         
-        viewModel.indicator.asDriver().drive(onNext: {
+        output.indicator.drive(onNext: {
             value in
             self.activityIndicator.isHidden = value
         }).disposed(by: disposeBag)
     
-        viewModel.warningError.asDriver().drive(onNext: {
-            value in
-            self.warningLabel.isHidden = value
+        output.errorTrigger.drive(onNext: {
+            error in
+            self.warningLabel.isEnabled = (error == nil) ? true : false
+            self.warningLabel.text = error?.localizedDescription
         }).disposed(by: disposeBag)
     }
     
@@ -76,3 +83,4 @@ class PlaceViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 }
+

@@ -10,78 +10,96 @@ import RxSwift
 import RxCocoa
 import GooglePlaces
 
-class PlaceViewModel {
-    let placesClient: GMSPlacesClient!
-    let indicator: BehaviorRelay<Bool>
-    let warningError: BehaviorRelay<Bool>
+protocol ViewModelType {
+    associatedtype Input
+    associatedtype Output
+    
+    func transform(input: Input) -> Output
+}
+
+class PlaceViewModel: ViewModelType {
+    
+    let googlePlaceService: GooglePlaceServiceProtocol
+    let indicator: BehaviorRelay<Bool> = BehaviorRelay(value: true)
+    let errorTrigger: BehaviorRelay<Error?> = BehaviorRelay(value: nil)
     var places: [Place] = []
     var placeEdit: Place?
     
-    init (placesClient: GMSPlacesClient, indicator: BehaviorRelay<Bool>, warningError: BehaviorRelay<Bool>) {
-        self.placesClient = placesClient
-        self.indicator = indicator
-        self.warningError = warningError
+    init (googlePlaceService: GooglePlaceServiceProtocol = GooglePlaceService()) {
+        self.googlePlaceService = googlePlaceService
     }
     
-    func getCurrentPlace() -> Observable<[Place]> {
-        indicator.accept(false)
-        return Observable.create { observer -> Disposable in
-            if !Reachability.isConnectedToNetwork() {
-                self.warningError.accept(false)
-                observer.onNext([])
-                observer.onCompleted()
+    struct Input {
+        let searchQuery: Observable<String>
+    }
+    
+    struct Output {
+        let searchResult: Observable<[Place]>
+        let indicator: Driver<Bool>
+        let errorTrigger: Driver<Error?>
+    }
+    
+    func transform(input: PlaceViewModel.Input) -> PlaceViewModel.Output {
+        
+        let handleGetPlace = Observable.combineLatest(input.searchQuery, Observable.just(isUserEnableService), Observable.just(Reachability.isConnectedToNetwork()))
+        
+        let result = handleGetPlace
+            .flatMapLatest { (query, isUserEnableService ,isNetworkAvailable) -> Observable<[Place]> in
+                if !isNetworkAvailable {
+                    self.errorTrigger.accept(JError.noInternetConnection)
+                    return Observable.just([])
+                } else if !isUserEnableService {
+                    self.errorTrigger.accept(JError.userNotAllowUsingLocation)
+                    return Observable.just([])
+                } else {
+                    return query.isEmpty ? self.getPlacesAtCurrentLocation() : self.getPlaces(withQuery: query)
+                }
             }
-            self.placesClient.currentPlace {
-                (locations, error) in
-                self.warningError.accept(true)
-                if let error = error {
-                    self.indicator.accept(true)
-                    self.warningError.accept(false)
-                    observer.onError(error)
-                    observer.onCompleted()
-                }
-                var places = [Place]()
-                locations?.likelihoods.forEach {
-                    likelihood in
-                    places.append(Place(title: likelihood.place.name, address: likelihood.place.formattedAddress ?? ""))
-                }
-                self.indicator.accept(true)
-                self.warningError.accept(true)
+        
+        return Output(searchResult: result, indicator: indicator.asDriver(), errorTrigger: errorTrigger.asDriver())
+    }
+    
+    private func getPlacesAtCurrentLocation() -> Observable<[Place]> {
+        return googlePlaceService.getCurrentPlaces()
+            .do(onNext: { places in
                 self.places = places
-                observer.onNext(places)
-                observer.onCompleted()
-            }
-            return Disposables.create {}
+                self .indicator.accept(true)
+            }, onError: { error in
+                self.errorTrigger.accept(error)
+                self.indicator.accept(true)
+            })
+    }
+    
+    private func getPlaces(withQuery query: String) -> Observable<[Place]> {
+        return googlePlaceService.getPlaces(with: query)
+            .do(onNext: { places in
+                self.places = places
+                self.indicator.accept(true)
+            }, onError: { error in
+                self.errorTrigger.accept(error)
+                self.indicator.accept(true)
+            })
+    }
+    
+    var isUserEnableService: Bool {
+        if let _ = checkUserEnableService() {
+            return false
         }
+        return true
     }
-    
-    func fectchPlaces(withQuery query: String) -> Observable<[Place]> {
-        return Observable.create { observer -> Disposable in
-            self.indicator.accept(false)
-            if !Reachability.isConnectedToNetwork() {
-                self.warningError.accept(false)
-                observer.onNext([])
-                observer.onCompleted()
+    func checkUserEnableService() -> Error? {
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .notDetermined, .restricted, .denied:
+                print("No access")
+                return NSError(domain: "User have not enable location service yet", code: 101, userInfo: nil)
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("Access")
+                return nil
             }
-            self.placesClient.autocompleteQuery(query, bounds: nil, filter: nil) {
-            (results, error) in
-                if let error = error {
-                    self.indicator.accept(true)
-                    self.warningError.accept(false)
-                    observer.onError(error)
-                    observer.onCompleted()
-                }
-                guard let results = results else { return }
-                let places = results.map { place in
-                    Place(title: place.attributedPrimaryText.string, address: (place.attributedSecondaryText?.string)!)
-                }
-                self.indicator.accept(true)
-                self.warningError.accept(true)
-                self.places = places
-                observer.onNext(places)
-                observer.onCompleted()
-            }
-            return Disposables.create {}
+        } else {
+            print("Location services are not enabled")
+            return NSError(domain: "Location services are not enabled", code: 100, userInfo: nil)
         }
     }
 }
