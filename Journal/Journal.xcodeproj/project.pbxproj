@@ -26,6 +26,7 @@
 		5A553A17208E3BA100820737 /* JournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A553A15208E3BA100820737 /* JournalCell.swift */; };
 		5A553A18208E3BA100820737 /* JournalMediaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A553A16208E3BA100820737 /* JournalMediaCell.xib */; };
 		5A553A1A208F256E00820737 /* PostImageView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A553A19208F256E00820737 /* PostImageView1.xib */; };
+		5A55BD26215C9470006FC3F8 /* TimeLineViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A55BD25215C9470006FC3F8 /* TimeLineViewModelTest.swift */; };
 		5A55F2AD21535BB500CCC23E /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A55F2AC21535BB500CCC23E /* AlertManager.swift */; };
 		5A7BDF5B209DA65B008CAA3F /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF5A209DA65A008CAA3F /* EmotionViewController.swift */; };
 		5A7BDF5D209DA862008CAA3F /* EmotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BDF5C209DA862008CAA3F /* EmotionCell.swift */; };
@@ -103,6 +104,7 @@
 		5A553A15208E3BA100820737 /* JournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCell.swift; sourceTree = "<group>"; };
 		5A553A16208E3BA100820737 /* JournalMediaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalMediaCell.xib; sourceTree = "<group>"; };
 		5A553A19208F256E00820737 /* PostImageView1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostImageView1.xib; sourceTree = "<group>"; };
+		5A55BD25215C9470006FC3F8 /* TimeLineViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewModelTest.swift; sourceTree = "<group>"; };
 		5A55F2AC21535BB500CCC23E /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		5A7BDF5A209DA65A008CAA3F /* EmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
 		5A7BDF5C209DA862008CAA3F /* EmotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCell.swift; sourceTree = "<group>"; };
@@ -227,6 +229,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5A55BD24215C943A006FC3F8 /* TimeLineTestCases */ = {
+			isa = PBXGroup;
+			children = (
+				5A55BD25215C9470006FC3F8 /* TimeLineViewModelTest.swift */,
+			);
+			path = TimeLineTestCases;
+			sourceTree = "<group>";
+		};
 		5A7BDF59209DA61E008CAA3F /* AddingItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +338,7 @@
 		5AA34F352086EF7B00E50B2B /* JournalTests */ = {
 			isa = PBXGroup;
 			children = (
+				5A55BD24215C943A006FC3F8 /* TimeLineTestCases */,
 				5AA34F362086EF7B00E50B2B /* JournalTests.swift */,
 				5AA34F382086EF7B00E50B2B /* Info.plist */,
 			);
@@ -613,6 +624,7 @@
 				"${BUILT_PRODUCTS_DIR}/BSGridCollectionViewLayout/BSGridCollectionViewLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/BSImagePicker/BSImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/NYTPhotoViewer/NYTPhotoViewer.framework",
@@ -631,6 +643,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSGridCollectionViewLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NYTPhotoViewer.framework",
@@ -704,6 +717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AA34F372086EF7B00E50B2B /* JournalTests.swift in Sources */,
+				5A55BD26215C9470006FC3F8 /* TimeLineViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -872,7 +886,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -891,7 +905,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

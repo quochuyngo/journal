@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tCz-M8-c0c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yp9-BF-pYO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,13 +47,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u3r-Bg-x6h">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3R-td-iB1">
+                                <rect key="frame" x="289" y="587" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="0zA-fb-TPi"/>
+                                    <constraint firstAttribute="height" constant="60" id="6bg-fa-vtK"/>
+                                </constraints>
+                                <state key="normal" image="ic_add_post"/>
+                                <connections>
+                                    <action selector="addNewJournal:" destination="oei-Fs-h6U" eventType="touchUpInside" id="i6t-sK-a6Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="u3r-Bg-x6h" firstAttribute="top" secondItem="jyh-7A-Cs1" secondAttribute="top" id="7sj-hX-2st"/>
+                            <constraint firstItem="jyh-7A-Cs1" firstAttribute="bottom" secondItem="z3R-td-iB1" secondAttribute="bottom" constant="20" id="BRV-xC-kse"/>
+                            <constraint firstItem="jyh-7A-Cs1" firstAttribute="trailing" secondItem="z3R-td-iB1" secondAttribute="trailing" constant="26" id="IBm-FW-NWH"/>
                             <constraint firstItem="u3r-Bg-x6h" firstAttribute="leading" secondItem="jyh-7A-Cs1" secondAttribute="leading" id="qnK-ef-RuM"/>
                             <constraint firstItem="jyh-7A-Cs1" firstAttribute="bottom" secondItem="u3r-Bg-x6h" secondAttribute="bottom" id="weH-Z7-Tfy"/>
                             <constraint firstItem="jyh-7A-Cs1" firstAttribute="trailing" secondItem="u3r-Bg-x6h" secondAttribute="trailing" id="xKE-P4-lMN"/>
@@ -69,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nAO-Er-YKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3596" y="-90"/>
+            <point key="canvasLocation" x="3596" y="-90.404797601199405"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dGq-Lm-dFr">
@@ -82,10 +93,6 @@
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="0.29019607843137252" green="0.79607843137254897" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="yp9-BF-pYO" kind="relationship" relationship="viewControllers" id="VsW-8r-K5Z"/>
-                        <segue destination="4IZ-hP-7UB" kind="relationship" relationship="viewControllers" id="e9M-DY-SEs"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfS-ar-Izl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -129,7 +136,7 @@
             </objects>
             <point key="canvasLocation" x="2761" y="705"/>
         </scene>
-        <!--New Post-->
+        <!--Journal-->
         <scene sceneID="YwV-bD-eYq">
             <objects>
                 <viewController storyboardIdentifier="NewPostViewController" id="XeN-cv-JH8" customClass="NewJournalViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,10 +150,10 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2YX-Th-VPf" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="427"/>
                                         <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Want to keep your stories?"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Tell your story!"/>
                                         </userDefinedRuntimeAttributes>
                                     </textView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0NY-Zc-ez8">
@@ -179,14 +186,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DDx-Bp-RGZ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Post" id="iGc-qM-QVh">
+                    <navigationItem key="navigationItem" title="Journal" id="iGc-qM-QVh">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="Lnv-9Q-n30">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="onCancel:" destination="XeN-cv-JH8" id="tQF-xn-FQ7"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Post" id="xgp-rd-5xQ">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="xgp-rd-5xQ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="onPost:" destination="XeN-cv-JH8" id="16b-1g-T5l"/>
@@ -274,7 +281,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gka-br-cvr">
-                                                    <rect key="frame" x="50.5" y="80.5" width="36.5" height="14.5"/>
+                                                    <rect key="frame" x="50" y="80.5" width="36.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -399,7 +406,7 @@
                                 </prototypes>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aPh-yP-i0J">
-                                <rect key="frame" x="177" y="355.5" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="355.5" width="20" height="20"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check your internet connection!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3p-Go-Tdb">
                                 <rect key="frame" x="69.5" y="200" width="236" height="16"/>
@@ -472,14 +479,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="112" height="56"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_location" translatesAutoresizingMaskIntoConstraints="NO" id="RY5-Wa-JNg">
-                                                            <rect key="frame" x="43" y="14.5" width="26" height="26"/>
+                                                            <rect key="frame" x="43" y="15" width="26" height="26"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="RY5-Wa-JNg" secondAttribute="height" multiplier="1:1" id="0v5-sR-ehl"/>
                                                                 <constraint firstAttribute="width" constant="26" id="Y6w-7x-8Wj"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFA-dA-YiV">
-                                                            <rect key="frame" x="23" y="46.5" width="64.5" height="17"/>
+                                                            <rect key="frame" x="24" y="47" width="64.5" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                                             <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -604,6 +611,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="removeButton" destination="ryM-yV-cfW" id="yVy-PD-4bq"/>
                                             <outlet property="tagLabel" destination="APl-Rs-PvZ" id="Yqs-8i-CQY"/>
                                         </connections>
                                     </tableViewCell>
@@ -777,8 +785,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_cancel" width="32" height="32"/>
-        <image name="ic_happiness" width="64" height="64"/>
-        <image name="ic_location" width="64" height="64"/>
+        <image name="ic_add_post" width="158" height="158"/>
+        <image name="ic_cancel" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="ic_happiness" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="ic_location" width="51.200000762939453" height="51.200000762939453"/>
     </resources>
 </document>

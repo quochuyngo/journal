@@ -47,7 +47,7 @@ class PlaceViewController: UIViewController {
             .flatMapLatest { [weak self] query -> Observable<[Place]> in
                 guard let strongSelf = self else { return Observable.just([])}
                 
-                return query.isEmpty ? Observable.just([]) : strongSelf.viewModel.fectchPlaces(withQuery: query)
+                return query.isEmpty ? strongSelf.viewModel.getCurrentPlace() : strongSelf.viewModel.fectchPlaces(withQuery: query)
             }.observeOn(MainScheduler.instance)
     
         searchResult.bind(to: tableView.rx.items(cellIdentifier: "PlaceCell", cellType: PlaceCell.self)) {

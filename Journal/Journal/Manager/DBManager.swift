@@ -8,8 +8,17 @@
 
 import RealmSwift
 
-class DBManager {
-    static var `default` = DBManager()
+protocol BaseDBManager {
+    static var `default`: BaseDBManager { get } 
+    func getListJournal() -> [Journal]
+    func add(_ journal: Journal)
+    func delete(_ journal: Journal)
+    func update(_ journal: Journal)
+}
+
+class DBManager: BaseDBManager {
+    
+    static var `default`: BaseDBManager = DBManager()
     var realm = try! Realm(configuration: DBManager.configDB())
     
     func getListJournal() -> [Journal] {

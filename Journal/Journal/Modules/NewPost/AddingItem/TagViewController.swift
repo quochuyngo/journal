@@ -26,7 +26,7 @@ class TagViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addButton.setTitleColor(UIColor.mainColor(), for: .normal)
         if let journal = viewModel.journal {
             viewModel.tags = journal.tags.toArray()
         }

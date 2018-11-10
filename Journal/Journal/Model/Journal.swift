@@ -74,7 +74,13 @@ extension Journal {
     
     func formatDate() -> String {
         let formater = DateFormatter()
-        formater.dateFormat = "MMM dd"
+        formater.dateFormat = "MMM d, yyyy"
+        return formater.string(from: datetimeEdited!)
+    }
+    
+    func formatTime() -> String {
+        let formater = DateFormatter()
+        formater.dateFormat = "h:mm a"//EEE 
         return formater.string(from: datetimeEdited!)
     }
 }

@@ -16,7 +16,8 @@ class EmotionCell: UICollectionViewCell {
     var item: EmojiItem! {
         didSet {
             emotionTitle.text = item.type.rawValue
-            emotionImageView.image = UIImage(named: item.icon)
+            emotionImageView.image = item.isSelected ? UIImage(named: item.icon)?.withRenderingMode(.alwaysTemplate) : UIImage(named: item.icon)
+            emotionImageView.tintColor = UIColor.mainColor()
         }
     }
 }
